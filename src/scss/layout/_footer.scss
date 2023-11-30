@@ -1,0 +1,15 @@
+/* Footer Setup */
+footer {
+	grid-area: footer;
+	margin-left: $nav-width;
+	padding: 0 1rem;
+	
+	@media screen and (max-width: 768px) {
+		& {
+			/* hidden footer for mobile. Why are there footers anyways?.. */
+			grid-area: none;
+			display: none;
+			margin-left: 0;
+		}
+	}
+}

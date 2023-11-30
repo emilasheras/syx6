@@ -1,0 +1,42 @@
+/* navbar options button styling */
+.options-button-container {
+	/* reset the button tag styles to none */
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 1rem 0 2rem 0;
+	height: 1.5rem;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+	& .line {
+		width: 2rem;
+		height: 0.15rem;
+		background-color: $light-teal;
+		border-radius: 0.05rem;
+		transition: 0.1s;
+	}
+	& .s6-invisible-input{
+		display: none;
+	}
+
+	&:has(.s6-invisible-input:checked) {
+		.line {
+			background-color: $dark-teal;
+			width: 2.2rem;
+		}		
+		width: 2.2rem;
+	}
+	
+	@media screen and (max-width: 768px) {
+		& {
+			display: flex;
+			margin: 1rem 0 1rem 0;
+		}
+	}
+}
+
+
+

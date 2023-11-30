@@ -1,0 +1,45 @@
+/* Reset Setup */
+
+@use "sass:map";
+:root {
+	/* 1rem = 18px */
+	font-size: $base-font-size;
+
+	// media queries for mobile' devices
+	@media (max-width: map.get($grid-breakpoints-bs5,md)) {
+		& {
+			font-size: $mobile-font-size;
+		}
+	}
+} 
+
+
+
+/* reset learned from https://gist.github.com/Asjas/4b0736108d56197fce0ec9068145b421 */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+/* remove default margin */
+body,h1,h2,h3,h4,p,figure,blockquote,dl,dd {
+	margin: 0;
+}
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+}
+img,picture {
+	max-width: 100%;
+	/* display: block; */
+}
+
+/* headings */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Astloch', cursive;
+	font-weight: normal;
+	color: $light-teal;
+	margin: 0;
+	padding: 0;
+	text-transform: capitalize;  
+}

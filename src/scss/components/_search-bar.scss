@@ -1,0 +1,49 @@
+/* Search Bar Setup */
+.section-seachbar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	.searchbar-container {
+		margin: 1rem;
+		color: $light-grey;
+		width: 100%;
+		max-width: 20rem;
+		/* padding: 1em; */
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		/* set as parent container */
+		position: relative;
+
+
+		.search-icon {
+			position: absolute;
+			left: 0.6em;
+		}
+		
+		input {
+			text-align: left;
+			width: 100%;
+			color: $accent;
+			background: $light-white;
+			padding: 0.5em 2em;
+			border: none;
+			border-radius: 25px;
+
+			&::placeholder {
+				color: $light-grey;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+		
+		.badge {
+			position: absolute;
+			right: 0.6em;
+		}
+	}
+}

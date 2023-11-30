@@ -1,0 +1,39 @@
+@use "sass:map";
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax($s6-gallery-img-size, 1fr));
+	grid-auto-rows: $s6-gallery-img-size;
+	gap: 8px; /* Adjust as needed */
+
+    article{
+        // width: 100%;
+        // height: 100%;
+        overflow: hidden;
+        // object-fit: cover;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
+
+    .s6-fade-in {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .s6-fade-in-loaded {
+        opacity: 1;
+    }
+    
+    @media screen and (min-width: map.get($grid-breakpoints-bs5, sm)) {
+        .img-tall {
+            grid-row: span 2 / auto;
+        }
+        .img-wide {
+            grid-column: span 2 / auto;
+        }
+    }
+}
+

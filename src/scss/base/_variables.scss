@@ -1,0 +1,59 @@
+/* Variables Setup */
+
+$base-font-size: 16px;
+$mobile-font-size: 15px;
+$small-mobile-font-size: 14px;
+
+/* taken from bs5.3 docs */
+$grid-breakpoints-bs5: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+
+// Colors
+$primary: #c1af11;
+$secondary: #535353;
+$accent: #28c11c; // affected by deuteranopia
+$accent-dark: #073f2c; // affected by deuteranopia
+$dark-grey: #0c0c0c;
+$light-grey: #313131;
+$dark-green: #24641f; // affected by deuteranopia
+$dark-green-2: #269809; // affected by deuteranopia
+$light-green: #789470;
+$dark-teal: #1d7874;
+$light-teal: #65e4e8;
+$light-white: #e8e8e8;
+$accent-two: #5643FF;
+
+// Sizes
+$webkit-scrollbar-width: 0.7vw;
+$logo-size: 10rem;
+
+// Nav
+$nav-width: 14rem;
+$nav-link-color: #65e4e8;
+$nav-bg-color: $dark-grey;
+$nav-bg-color-transparent: #0c0c0c67; // should be some transparent value
+
+// Miscellaneous
+$encapsulator-left: "‹";
+$encapsulator-right: "›";
+$encapsulator-left-hover: "«";
+$encapsulator-right-hover: "»";
+$encapsulator-color: $dark-teal;
+$lib-prefix: "s6";
+$s6-debug-color: #880000;
+$s6-gallery-img-size: 22rem;
+
+// Accessibility tricks
+// todo: make a Theme switcher in JS to adapt at runtime
+/* In this case, we choose the accent color based on Deuteranopia */
+$deuteranopia-mode: false;
+@if($deuteranopia-mode) {
+    $accent: #5643ff;
+}

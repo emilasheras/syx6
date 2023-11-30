@@ -1,0 +1,11 @@
+/* Mixins Setup */
+
+@mixin avatar($size, $circle: false) {
+  width: $size;
+  height: $size;
+
+  @if $circle {
+    // border-radius: math.div($size, 2);
+    border-radius: calc($size / 2);
+  }
+}

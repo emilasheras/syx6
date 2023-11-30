@@ -1,0 +1,100 @@
+/* s6 Helper Styles */
+
+.#{$lib-prefix}{
+	
+	&-debug-bg {
+		background-color: $s6-debug-color;
+	}
+	
+	&-text-accent {
+		color: $accent;
+	}
+	&-bg-accent {
+		color: $dark-grey;
+		background-color: $accent;
+	}
+	
+	/* s6 brightness utilities setup */
+	// this makes about 20 classes of brightnesses from 5% to 100%
+	@for $i from 1 through 20 {
+		$increment: $i * 5;
+		&-filter-brightness-#{$increment} {
+			transition: 0.2s;
+			filter: brightness(1);
+			&:hover {
+				filter: brightness(calc($increment / 100));
+			}
+		}
+	}
+
+
+	/* encapsulator without hover effects */
+	&-encapsulator-double{
+		&:before {
+			content: $encapsulator-left-hover;
+		}
+		&:after {
+			content: $encapsulator-right-hover;
+		}
+	}
+	
+	/* encapsulator with hover effects */
+	&-encapsulator{
+		& {
+			text-transform: uppercase;
+		}
+		&:before,
+		&:after {
+			transition: content 0.8s;
+			/* color: $encapsulator-color); */
+		}
+		&:before {
+			content: $encapsulator-left;
+		}
+		&:after {
+			content: $encapsulator-right;
+		}
+		&:hover:before {
+			content: $encapsulator-left-hover;
+		}
+		&:hover:after {
+			content: $encapsulator-right-hover;
+		}
+	}
+	
+	/* shop secondary content */
+	&-secondary-content {
+		background-color: $light-grey;
+	}
+	&-img-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	
+	// this makes about 5 classes of aspect ratios from 1 to 5
+	@for $i from 1 through 5 {
+		$increment: $i*6;
+		&-aspect-ratio-square-#{$i} {
+			width: #{$increment*1}rem;
+			// height: auto;
+			height: #{$increment*1}rem;
+		}
+	}
+	
+	&-btn {
+		background: $dark-green-2;
+		color: #000000;
+		font-family: "IBM 3270", monospace;
+		padding: 0.1em 0.2em;
+	}
+
+
+	&-square-av {
+		@include avatar(100px, $circle: false);
+	}
+	&-circle-av {
+		@include avatar(100px, $circle: true);
+	}
+}

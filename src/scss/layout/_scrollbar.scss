@@ -1,0 +1,18 @@
+/* Scrollbar Setup */
+body::-webkit-scrollbar {
+	width: $webkit-scrollbar-width;
+}
+body::-webkit-scrollbar:horizontal {
+	height: $webkit-scrollbar-width;
+}
+body::-webkit-scrollbar-track,
+body::-webkit-scrollbar-corner {
+	background: $dark-grey;
+}
+body::-webkit-scrollbar-thumb {
+	background: $dark-green;
+	border-radius: 0.5rem;
+}
+body::-webkit-scrollbar-thumb:hover {
+	background: $accent;
+}

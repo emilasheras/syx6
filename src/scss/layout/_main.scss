@@ -1,0 +1,86 @@
+@use "sass:map";
+
+/* Main Setup */
+main {
+	grid-area: main;
+	margin-left: $nav-width;
+	margin-bottom: 0;
+	padding: 0 1rem;
+
+	// margins top and bottom for sections
+	section {
+		margin: 1rem 0;
+	}
+
+	.s6-layout-fluid{
+		margin: 0;
+		padding: 0;
+	}
+
+	.s6-layout-read{
+		max-width: 940px;
+		margin: auto;
+		padding: 0;
+	}
+	
+	// Between 768px and 992px
+	@media screen and (min-width: map.get($grid-breakpoints-bs5,md)) and (max-width: map.get($grid-breakpoints-bs5,lg))  {
+		& {
+			.s6-layout-fluid{
+				margin: 0;
+				padding: 0;
+			}
+			
+			.s6-layout-read{
+				max-width: 550px;
+				margin: auto;
+				padding: 0;
+			}
+		}
+	}
+	// Between 576px and 768px
+	@media screen and (min-width: map.get($grid-breakpoints-bs5,sm)) and (max-width: map.get($grid-breakpoints-bs5,md)) {
+		& {
+			.s6-layout-fluid{
+				margin: 0;
+				padding: 0;
+			}
+		
+			.s6-layout-read{
+				max-width: 450px;
+				margin: auto;
+				padding: 0;
+			}
+		}
+	}
+	// Between 0px and 576px
+	@media screen and (max-width: map.get($grid-breakpoints-bs5,sm)) {
+		& {
+			.s6-layout-fluid{
+				margin: 0;
+				padding: 0;
+			}
+		
+			.s6-layout-read{
+				max-width: 350px;
+				margin: auto;
+				padding: 0;
+			}
+
+			grid-area: main;
+			margin-left: 0;
+			margin-bottom: 2rem;
+			padding: 1rem;
+		}
+	}
+
+	// For the 2 media-queries above (from 0 up to 786px) that both need the same code:
+	@media screen and (max-width: map.get($grid-breakpoints-bs5,md)) {
+		grid-area: main;
+		margin-left: 0;
+		margin-bottom: 2rem;
+		padding: 1rem;
+	}
+}
+
+

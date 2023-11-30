@@ -1,0 +1,34 @@
+/* Body Setup */
+body {
+	background-color: $dark-grey;
+	color: $primary;
+	font-family: "IBM 3270", monospace;
+	font-size: 1.2rem;
+	margin: 0;
+	padding: 0;
+
+	& {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: 1fr auto;
+		grid-template-areas:
+			"navbar main"
+			"navbar footer";
+	}
+
+	@media screen and (max-width: 768px) {
+		& {
+		  display: grid;
+		  grid-template-columns: 1fr;
+		  grid-template-rows: 1f auto;
+		  /* removed footer */
+		  grid-template-areas:
+			"main"
+			"navbar";
+		}
+	}
+}
+
+
+
+

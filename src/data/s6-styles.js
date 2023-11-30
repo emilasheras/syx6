@@ -1,0 +1,1 @@
+export const encapsulator = 's6-encapsulator';

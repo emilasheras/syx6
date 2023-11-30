@@ -1,0 +1,85 @@
+$animation-opacity-wave: "s6-transparency-wave";
+$animation-hr-transition: "s6-section-breaker";
+$animation-logo-passive: "s6-logo-passive-rotation";
+$animation-color-transition: "s6-letter-color-transition";
+
+/* animate every accent to the primary color */
+.s6-animate-accent-to-primary {
+  animation: #{$animation-color-transition} 0.5s linear;
+}
+
+/* animate the hr tags */
+hr {
+  /* center the HR in whatever container it has without stepping on the bs5 styles */
+  margin-left: auto;
+  margin-right: auto;
+  animation: #{$animation-hr-transition} 0.5s linear;
+}
+
+/* animate the navbar items */
+.navbar-vertical{
+  // This makes the animation delay increment by 0.25s
+  $delay-increment: 0.25s;
+  @for $i from 0 through 5 {
+      li:nth-child(#{$i + 1}) a {
+          animation-delay: #{$i * $delay-increment};
+      }
+  }
+
+  & ul a {
+    animation: #{$animation-opacity-wave} 1.5s linear infinite;
+  }
+
+  & .logo-container{
+    & img{
+      animation: #{$animation-logo-passive} 10s linear infinite;
+      filter: none;
+      transition: filter .2s linear; /* this is to make the logo glow when hovered */
+      
+      &:hover {
+        filter: drop-shadow(0 0 0.5rem $accent);
+      }
+    }
+  }
+  
+}
+/* the logo is a rounded circle, make it flip around like a coin */
+@keyframes #{$animation-logo-passive}{
+  0% {
+    transform: rotateY(0deg) rotateX(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(10deg) rotateZ(0deg);
+  }
+}
+@keyframes #{$animation-opacity-wave} {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* abrupt color transition into the text base color */
+@keyframes #{$animation-color-transition} {
+  0% {
+    color: $accent;
+  }
+  99% {
+    color: $primary;
+  }
+  100% {
+    color: $accent;
+  }
+}
+@keyframes #{$animation-hr-transition} {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
