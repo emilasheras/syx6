@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBarVertical";
 // import ItemListContainer from "../components/ItemListContainer"; //!testing
-// import SearchBar from "../components/SearchBar"; //todo: Finish implementing the searchbar
+import SearchBar from "../components/SearchBar";
 
 export function HeaderContent() {
     console.log('HeaderContent Rendered');
@@ -17,6 +17,7 @@ export function MainContent() {
     // <ItemListContainer a={1} b={4}/> 
     return (
         <>
+            <SearchBar/>
             <h1>MainContent</h1>
             <p>This is the main content</p>
         </>

@@ -7,7 +7,7 @@
 
 	.searchbar-container {
 		margin: 1rem;
-		color: $light-grey;
+		color: $accent-two;
 		width: 100%;
 		max-width: 20rem;
 		/* padding: 1em; */
@@ -19,9 +19,21 @@
 		position: relative;
 
 
-		.search-icon {
+		.s6-search-icon {
+			color: $dark-grey;
 			position: absolute;
-			left: 0.6em;
+			left: 0.4em;
+		}
+
+		.s6-hint-color {
+			color: $accent-two;
+			font-weight: 600;
+
+			// change placeholder
+			&::placeholder {
+				font-weight: 400;
+				color: $light-green;
+			}
 		}
 		
 		input {
