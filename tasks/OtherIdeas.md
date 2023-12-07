@@ -1,0 +1,14 @@
+### Some Random Ideas For The Site
+- [ ] make the markdown interactable somehow, maybe transform their content into html and make a wiki with visually interlinked concepts like Obsidian.md
+- [x] add assets drawn by hand?
+- [x] attach the original mockups
+- [x] populate the gallery with my own drawings and tattoo projects
+- [ ] make the shop inspector have a cool animation that does not impact the user experience. 
+- [ ] make the shop have a cart
+- [ ] connect the shop to a print on demand service like Printful or Society6
+- [ ] make the shop have the real merch examples.
+- [ ] re-think if the project is not to be an art shop, but a tattoo artist's portfolio. What about multiple artists?
+- [ ] make the text display speed be random but also somehow controlled by the user (slowest, slow, medium, fast, fastest)
+- [ ] make the html elements have a pre-render animation that makes them fade in from the background color to the foreground color
+- [x] make the hr tag have a cool animation. maybe from the center onto the sides?
+- [ ] make accessibility as a THEME switcher. Only for the visibility impaired.
