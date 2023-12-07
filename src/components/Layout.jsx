@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 
-export default function Layout({ header, main }) {
+export default function Layout({ header, main, footer }) {
   console.log('Layout Component Rendered');
   return (
     <>
       <header>{header}</header>
       <main>{main}</main>
-      {/* <footer>{footer}</footer> */}
+      <footer className="text-center">{footer}</footer>
     </>
   );
 }
@@ -14,5 +14,5 @@ export default function Layout({ header, main }) {
 Layout.propTypes = {
   main: PropTypes.node.isRequired,
   header: PropTypes.node.isRequired,
-  // children: PropTypes.node.isRequired,
+  footer: PropTypes.node.isRequired,
 };

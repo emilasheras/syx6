@@ -1,42 +1,33 @@
-import NavBar from "../components/NavBar";
-import ItemListContainer from "../components/ItemListContainer";
+import Footer from "../components/Footer";
+import NavBar from "../components/NavBarVertical";
+// import ItemListContainer from "../components/ItemListContainer"; //!testing
 // import SearchBar from "../components/SearchBar"; //todo: Finish implementing the searchbar
 
 export function HeaderContent() {
     console.log('HeaderContent Rendered');
-    return (
-        <>
-        <NavBar/>
-        </>
-    )
+    return <NavBar/>;
 }
 
 export function MainContent() {
     console.log('MainContent Rendered');
+
+    // todo: Implement the sections
+
+    // Practice file
+    // <ItemListContainer a={1} b={4}/> 
     return (
         <>
-        <ItemListContainer greeting="Welcome to the store!"/>
-        {
-        // <SearchBar/>
-
-		// <section class="s6-layout-read">
-            // <Section1/>
-			// <hr />
-            // <Section2..n/>
-        // </section>
-
-        }
-
+            <h1>MainContent</h1>
+            <p>This is the main content</p>
         </>
-    )
+    );
 }
 
-// todo: Implement the sections
-// todo: Implement the footer
-{
-/*
-<footer class="text-center">
-    <slot id="footer"></slot>
-</footer>
-*/
+/**
+ * @component
+ * @returns {JSX.Element} - The footer
+ */
+export function FooterContent() {
+    console.log('FooterContent Rendered');
+    return <Footer/>;
 }

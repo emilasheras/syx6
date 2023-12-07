@@ -17,7 +17,7 @@ hr {
 }
 
 /* animate the navbar items */
-.navbar-vertical{
+.s6-navbar-vertical{
   // This makes the animation delay increment by 0.25s
   $delay-increment: 0.25s;
   @for $i from 0 through 5 {

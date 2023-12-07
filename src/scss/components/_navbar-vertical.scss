@@ -1,5 +1,5 @@
 /* Vertical Navbar Setup */
-.navbar-vertical {
+.s6-navbar-vertical {
 	/* move to the top z index. this is cause of the layout change for mobile */
 	z-index: 1;
 
@@ -37,7 +37,7 @@
 			border-radius: 50%;
 		}
 	}
-	& ul {
+	& .s6-navbar-unordered-list {
 		list-style: none;
 		padding: 0;
 		margin: 0;
@@ -108,7 +108,7 @@
 			font-size: 1.2rem;
 		}
 
-		& ul {
+		& .s6-navbar-unordered-list {
 			flex-direction: column;
 			justify-content: space-evenly;
 			align-items: center;
@@ -121,7 +121,7 @@
 
 		// This makes it so that the items when the hamburger is clicked
 		&:has(.s6-invisible-input:checked) {
-			& ul {
+			& .s6-navbar-unordered-list {
 				display: flex;
 				translate:  0%;
 				// height: 10px;
