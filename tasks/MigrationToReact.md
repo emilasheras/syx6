@@ -33,6 +33,6 @@
     - [x] Online bootcamp mockups
     - [x] Online bootcamp readme files
 
-
-
-
+- [ ] Javascript migration process
+    - [ ] Console Logger behavior.
+    - [ ] Word animation behavior.

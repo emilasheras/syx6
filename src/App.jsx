@@ -11,21 +11,27 @@ import "./scss/main.scss"; // <- After bootstrap for precedence
  */
 import Layout from "./components/Layout";
 import { MainContent, HeaderContent, FooterContent } from "./pages/HomePage";
-
+import SearchBar from "./components/SearchBar";
 
 /**
  * Represents the entire application
- * @component 
+ * @component
  * @returns {JSX.Element} - The entire application
  */
 const App = () => {
+	// const isSearchbarEnabled = false;
 	return (
 		<Layout
-			main={<MainContent />}
+			main={
+				<>
+					<SearchBar/>
+					<MainContent />
+				</>
+			}
 			header={<HeaderContent />}
 			footer={<FooterContent />}
 		/>
 	);
-}
+};
 
 export default App;
