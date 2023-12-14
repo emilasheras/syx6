@@ -9,8 +9,6 @@ body {
 
 	//* This had to be updated to #root due to ReactJs enforcing a root div.
 	#root {
-		width: 100vw;
-		height: 100vh;
 	
 		display: grid;
 		grid-template-columns: auto 1fr;
