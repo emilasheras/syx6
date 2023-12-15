@@ -1,4 +1,4 @@
-import { urlDataNavbar } from '../data/s6-url-data.js';
+import urlDataNavbar from '../data/s6-url-data.js';
 import { encapsulator, navbarLink, navbarUnorderedList } from '../data/s6-styles.js';
 
 
@@ -10,11 +10,10 @@ export default function Links() {
     console.log('Links Rendered');
 
     const getHref = (name) => {
-        //example href let href = link.relPath+link.url;
         let href = '/';
         urlDataNavbar.forEach(link => {
             if (link.name === name) {
-                href = link.relPath+link.url;
+                href = link.subdirectory+link.path;
             }
         });
         return href;

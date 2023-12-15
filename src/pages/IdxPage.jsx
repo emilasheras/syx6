@@ -1,17 +1,9 @@
+import React from 'react';
 // import { useState, useEffect } from 'react';
 import useFetchData from '../hooks/useFetchData';
-
-import Footer from "../components/Footer";
-import NavBar from "../components/NavBarVertical";
 import getLoadingJSX from '../components/LoadingScaffold/getLoadingJSX';
 
-
-export function HeaderContent() {
-    console.log('HeaderContent Rendered');
-    return <NavBar/>;
-}
-
-export function MainContent() {
+export default function MainContent() {
     const { data, loading, error } = useFetchData('/src/data/index-html.json');
 
     if(loading) return getLoadingJSX('text');
@@ -30,9 +22,10 @@ export function MainContent() {
                 sectionsToArray.map((section, index) => {
                     // Check if this is the last section for the final separator to not be rendered
                     const isLastSection = index === sectionsToArray.length - 1;
+                    console.log(`index key: ${index}`)
                     return (
-                        <>
-                            <section key={index}>
+                        <React.Fragment key={index}>
+                            <section>
                                 <h2>{section.heading}</h2>
                                 {
                                     // Put each paragraph inside a <p> tag
@@ -45,19 +38,10 @@ export function MainContent() {
                                 !isLastSection && // <- if not last section
                                 <div dangerouslySetInnerHTML={{__html: sectionSeparator}}></div> //! Beware of XSS attacks
                             }
-                        </> 
+                        </React.Fragment>
                     );
                 })
             }
         </section>
     );
-}
-
-/**
- * @component
- * @returns {JSX.Element} - The footer
- */
-export function FooterContent() {
-    console.log('FooterContent Rendered');
-    return <Footer/>;
 }
