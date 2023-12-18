@@ -19,17 +19,17 @@ import HeaderDefault from "./components/header/HeaderDefault";
 import SearchBar from "./components/SearchBar";
 import FooterDefault from "./components/Footer/FooterDefault";
 /** Pages */
-import NotFoundPageMain from "./pages/NotFoundPage";
-import IdxPageMain from "./pages/IdxPage";
-//todo import HmePageMain from "./pages/HmePage";
-//todo import GllPageMain from "./pages/GllPage";
-//todo import NxsPageMain from "./pages/NxsPage";
-//todo import ShpPageMain from "./pages/ShpPage";
-//todo import ClgPageMain from "./pages/ClgPage";
-//todo import AbtPageMain from "./pages/AbtPage";
+const IdxPageMain = React.lazy(() => import('./pages/IdxPage'));
+const NotFoundPageMain = React.lazy(() => import('./pages/NotFoundPage'));
+// const HmePageMain = React.lazy(() => import('./pages/HmePage'));
+// const GllPageMain = React.lazy(() => import('./pages/GllPage'));
+// const NxsPageMain = React.lazy(() => import('./pages/NxsPage'));
+// const ShpPageMain = React.lazy(() => import('./pages/ShpPage'));
+// const ClgPageMain = React.lazy(() => import('./pages/ClgPage'));
+const AbtPageMain = React.lazy(() => import('./pages/AbtPage'));
 
 /**
- * Data
+ * Data & Custom Hooks/Functions
  */
 import urlData from "./data/s6-url-data";
 
@@ -59,7 +59,7 @@ const getJSXContent = () => {
 		// nxs: NxsPageMain,
 		// shp: ShpPageMain,
 		// clg: ClgPageMain,
-		// abt: AbtPageMain,
+		abt: AbtPageMain,
 
 		//! PLACEHOLDERS
 		hme: () => (<>HmePageMain Placeholder</>),
@@ -67,7 +67,7 @@ const getJSXContent = () => {
 		nxs: () => (<>NxsPageMain Placeholder</>),
 		shp: () => (<>ShpPageMain Placeholder</>),
 		clg: () => (<>ClgPageMain Placeholder</>),
-		abt: () => (<>AbtPageMain Placeholder</>),
+		// abt: () => (<>AbtPageMain Placeholder</>),
 	};
 
 

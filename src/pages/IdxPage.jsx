@@ -22,7 +22,6 @@ export default function MainContent() {
                 sectionsToArray.map((section, index) => {
                     // Check if this is the last section for the final separator to not be rendered
                     const isLastSection = index === sectionsToArray.length - 1;
-                    console.log(`index key: ${index}`)
                     return (
                         <React.Fragment key={index}>
                             <section>

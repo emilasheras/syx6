@@ -1,4 +1,4 @@
-const NotFoundPage = () => {
+export default function MainContent(){
     const code = '404';
     const errorMsg = 'Resource not found';
     
@@ -9,5 +9,3 @@ const NotFoundPage = () => {
         </>
     );
 }
-
-export default NotFoundPage;

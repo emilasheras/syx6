@@ -1,6 +1,6 @@
 // todo: finish implementation
-export function MainContent() {
-	/**
+export default function MainContent(){
+	
     return (
 		<section class="s6-layout-fluid">
 			<section class="row">
@@ -105,5 +105,5 @@ export function MainContent() {
 			</section>
 		</section>
     );
-	 */
+	
 }

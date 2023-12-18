@@ -19,7 +19,7 @@
 - [ ] Detectar la navegación entre categorías y recargar productos de la categoría seleccionada.
 
 ## Notas:
-- [ ] Usar `BrowserRouter` en lugar de `HashRouter`.
+- [x] Usar `BrowserRouter` en lugar de `HashRouter`.
 - [ ] Usar el id de categoría e ítem como parámetros en la URL.
 
 ## Para Entregar:
