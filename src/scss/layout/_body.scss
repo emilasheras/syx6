@@ -4,12 +4,15 @@ body {
 	color: $primary;
 	font-family: "IBM 3270", monospace;
 	font-size: 1.2rem;
+	height: var(--body-height);
+	width: var(--body-width);
 	margin: 0;
 	padding: 0;
 
 	//* This had to be updated to #root due to ReactJs enforcing a root div.
 	#root {
-	
+		height: 100%; //* due to the new #root div, the height of the body must be setted to a specific value.
+
 		display: grid;
 		grid-template-columns: auto 1fr;
 		grid-template-rows: 1fr auto;

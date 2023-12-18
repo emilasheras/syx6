@@ -31,7 +31,7 @@ $light-white: #e8e8e8;
 $accent-two: #5643FF;
 
 // Sizes
-$webkit-scrollbar-width: 0.7vw;
+$webkit-scrollbar-width: 6px;
 $logo-size: 10rem;
 
 // Nav
@@ -56,4 +56,14 @@ $s6-gallery-img-size: 22rem;
 $deuteranopia-mode: false;
 @if($deuteranopia-mode) {
     $accent: #5643ff;
+}
+
+
+/** 
+ * After the SASS variables are defined and the CSS is compiled, the CSS variables are defined.
+ */
+:root {
+  //* These are not SASS variables, but CSS variables. They are used for the interaction with JS as well.
+  --body-height: calc(100vh - $webkit-scrollbar-width); // <- Updated via JS. `useAdjustBodyXY` hook.
+  --body-width: calc(100vw - $webkit-scrollbar-width); // <- Updated via JS. `useAdjustBodyXY` hook.
 }

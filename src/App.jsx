@@ -29,11 +29,13 @@ import IdxPageMain from "./pages/IdxPage";
 //todo import AbtPageMain from "./pages/AbtPage";
 
 /**
- * Data
+ * Data & Custom Hooks/Functions
  */
 import urlData from "./data/s6-url-data";
+// import useAdjustBody from './hooks/useAdjustBodyXY';
 
 const App = () => {
+	// useAdjustBody();
 	return (
 		<Router>
 			<Layout
