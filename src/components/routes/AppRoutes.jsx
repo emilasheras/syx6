@@ -1,7 +1,8 @@
 // AppRoutes.jsx
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-// ... other page imports
+
+// Pages
 const IdxPageMain = React.lazy(() => import("/src/pages/IdxPage"));
 const HmePageMain = React.lazy(() => import("/src/pages/HmePage"));
 const GlrPageMain = React.lazy(() => import("/src/pages/GlrPage"));
@@ -10,8 +11,9 @@ const ShpPageMain = React.lazy(() => import("/src/pages/ShpPage"));
 const ClgPageMain = React.lazy(() => import("/src/pages/ClgPage"));
 const AbtPageMain = React.lazy(() => import("/src/pages/AbtPage"));
 import NotFoundPageMain from "/src/pages/NotFoundPage";
+
+// Data 
 import urlData from "/src/data/s6-url-data";
-// import getLoadingJSX from "/src/components/loading-scaffold/getLoadingJSX";
 import syxlog from "/src/utils/syxlog";
 
 const AppRoutes = () => {
@@ -19,7 +21,7 @@ const AppRoutes = () => {
 
 	React.useEffect(() => {
 		// Log the path to understand when re-renders occur
-		syxlog.debug("Navigated to:", location.pathname);
+		syxlog.out("Navigated to:", location.pathname);
 	}, [location]);
 
 
@@ -44,7 +46,7 @@ const AppRoutes = () => {
 						);
 					return (
 						<Route
-							key={index+abbreviation}
+							key={index + abbreviation}
 							path={subdirectory + path}
 							element={<PageComponent />}
 						/>
