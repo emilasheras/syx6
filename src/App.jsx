@@ -20,13 +20,13 @@ import SearchBar from "./components/SearchBar";
 import FooterDefault from "./components/Footer/FooterDefault";
 /** Pages */
 const IdxPageMain = React.lazy(() => import('./pages/IdxPage'));
-const NotFoundPageMain = React.lazy(() => import('./pages/NotFoundPage'));
-// const HmePageMain = React.lazy(() => import('./pages/HmePage'));
-// const GllPageMain = React.lazy(() => import('./pages/GllPage'));
-// const NxsPageMain = React.lazy(() => import('./pages/NxsPage'));
-// const ShpPageMain = React.lazy(() => import('./pages/ShpPage'));
-// const ClgPageMain = React.lazy(() => import('./pages/ClgPage'));
+const HmePageMain = React.lazy(() => import('./pages/HmePage'));
+const GlrPageMain = React.lazy(() => import('./pages/GlrPage'));
+const NxsPageMain = React.lazy(() => import('./pages/NxsPage'));
+const ShpPageMain = React.lazy(() => import('./pages/ShpPage'));
+const ClgPageMain = React.lazy(() => import('./pages/ClgPage'));
 const AbtPageMain = React.lazy(() => import('./pages/AbtPage'));
+const NotFoundPageMain = React.lazy(() => import('./pages/NotFoundPage')); // <- 404 page
 
 /**
  * Data & Custom Hooks/Functions
@@ -52,26 +52,18 @@ const App = () => {
 };
 
 const getJSXContent = () => {
+	// todo: move this somewhere else?
 	const pageComponents = {
-		// todo: import this components at the top of the file once the page migration is done from s6
 		idx: IdxPageMain,
-		// hme: HmePageMain,
-		// gll: GllPageMain,
-		// nxs: NxsPageMain,
-		// shp: ShpPageMain,
-		// clg: ClgPageMain,
+		hme: HmePageMain,
+		glr: GlrPageMain,
+		nxs: NxsPageMain,
+		shp: ShpPageMain,
+		clg: ClgPageMain,
 		abt: AbtPageMain,
-
-		//! PLACEHOLDERS
-		hme: () => (<>HmePageMain Placeholder</>),
-		gll: () => (<>GllPageMain Placeholder</>),
-		nxs: () => (<>NxsPageMain Placeholder</>),
-		shp: () => (<>ShpPageMain Placeholder</>),
-		clg: () => (<>ClgPageMain Placeholder</>),
-		// abt: () => (<>AbtPageMain Placeholder</>),
 	};
 
-
+	
 	return(
 		<Suspense fallback={getLoadingJSX()}>
 			<Routes>

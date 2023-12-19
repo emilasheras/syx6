@@ -20,13 +20,14 @@
     - [x] Import SASS files into `App.jsx` (or `main.jsx`).
     - [x] Install Bootstrap 5.x
 - [x] Remake the pages in React JSX components
-    - [ ] `404.html` => `<component>.jsx`
-    - [ ] `about.html` => `<component>.jsx`
-    - [ ] `changelog.html` => `<component>.jsx`
-    - [ ] `gallery.html` => `<component>.jsx`
-    - [x] `home.html` => [`HomePage.jsx`](/src/pages/HomePage.jsx)
-    - [ ] `nexus.html` => `<component>.jsx`
-    - [ ] `shop.html` => `<component>.jsx`
+    - [x] `index.html` => `IdxPage.jsx`
+    - [x] `404.html` => `NotFoundPage.jsx`
+    - [x] `about.html` => `AbtPage.jsx`
+    - [x] `changelog.html` => `ClgPage.jsx`
+    - [x] `gallery.html` => `GlrPage.jsx`
+    - [x] `home.html` => `HmePage.jsx`
+    - [x] `nexus.html` => `NxsPage.jsx`
+    - [x] `shop.html` => `ShpPage.jsx`
 
 - [x] Copy the previous project's markdown and online-course files.
     - [x] Online bootcamp courses
