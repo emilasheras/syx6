@@ -8,7 +8,7 @@ import "./scss/main.scss"; // <- After bootstrap for precedence
 /**
  * React
  */
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 /** 
@@ -32,6 +32,7 @@ const AbtPageMain = React.lazy(() => import('./pages/AbtPage'));
  * Data & Custom Hooks/Functions
  */
 import urlData from "./data/s6-url-data";
+import getLoadingJSX from "./components/LoadingScaffold/getLoadingJSX";
 
 const App = () => {
 	return (
@@ -72,25 +73,27 @@ const getJSXContent = () => {
 
 
 	return(
-		<Routes>
-			<Route path="/" element={<IdxPageMain/>}/> 
-			{
-				urlData.map(({abbreviation,subdirectory,path}, index) => {
-					try {						
-						const currentMain = pageComponents[abbreviation];
-						if(currentMain === undefined) throw Error(`The [${abbreviation}] abbreviation index wasnt found inside the [pageComponents] object, but is defined in [s6-url-data.js]`);
-						return <Route 
-							key={index} 
-							path={subdirectory+path} 
-							element={React.createElement(currentMain)}
-						/>
-					} catch (error) {
-						console.error(error);
-					}
-				})
-			}
-			<Route path="*" element={<NotFoundPageMain/>}/>
-		</Routes>
+		<Suspense fallback={getLoadingJSX()}>
+			<Routes>
+				<Route path="/" element={<IdxPageMain/>}/> 
+				{
+					urlData.map(({abbreviation,subdirectory,path}, index) => {
+						try {						
+							const currentMain = pageComponents[abbreviation];
+							if(currentMain === undefined) throw Error(`The [${abbreviation}] abbreviation index wasnt found inside the [pageComponents] object, but is defined in [s6-url-data.js]`);
+							return <Route 
+								key={index} 
+								path={subdirectory+path} 
+								element={React.createElement(currentMain)}
+							/>
+						} catch (error) {
+							console.error(error);
+						}
+					})
+				}
+				<Route path="*" element={<NotFoundPageMain/>}/>
+			</Routes>
+		</Suspense>
 	);
 }
 
