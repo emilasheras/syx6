@@ -13,6 +13,14 @@ class syxlog {
         console.log(`%c${timestamp}`, 'color: cyan; font-weight: bold;', ...data);
     }
 
+    static debug(...data) {
+        // Implement custom logging logic here
+        const now = new Date();
+        const time = now.toLocaleTimeString();
+        const timestamp = `[${time}]`;
+        console.log(`%c${timestamp}`, 'color: purple; font-weight: bold;', ...data);
+    }
+
     // todo: Add methods for warn, error, etc. if needed
     static warn(...data) {
         const now = new Date();

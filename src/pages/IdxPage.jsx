@@ -1,7 +1,7 @@
 import React from 'react';
 // import { useState, useEffect } from 'react';
 import useFetchData from '../hooks/useFetchData';
-import getLoadingJSX from '../components/LoadingScaffold/getLoadingJSX';
+import getLoadingJSX from '../components/loading-scaffold/getLoadingJSX';
 
 export default function MainContent() {
     const { data, loading, error } = useFetchData('/src/data/index-html.json');

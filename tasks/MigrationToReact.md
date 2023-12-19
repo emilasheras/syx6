@@ -35,5 +35,10 @@
     - [x] Online bootcamp readme files
 
 - [ ] Javascript migration process
-    - [ ] Console Logger behavior.
+    - [x] Console Logger behavior.
     - [ ] Word animation behavior.
+
+- [ ] Make the pages have dynamic assets via fetch.
+    - [ ] `GlrPage.jsx`
+    - [ ] `HmePage.jsx`
+    - [ ] `ShpPage.jsx`
