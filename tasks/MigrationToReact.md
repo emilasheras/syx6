@@ -39,6 +39,6 @@
     - [ ] Word animation behavior.
 
 - [ ] Make the pages have dynamic assets via fetch.
-    - [ ] `GlrPage.jsx`
+    - [x] `GlrPage.jsx`
     - [ ] `HmePage.jsx`
     - [ ] `ShpPage.jsx`

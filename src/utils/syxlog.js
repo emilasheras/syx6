@@ -36,6 +36,13 @@ class syxlog {
         const timestamp = `[${time}]`;
         console.warn(`%c${timestamp}`, `color: ${syxlog.colors.warn}; font-weight: bold;`, ...data);
     }
+
+    static error(...data) {
+        const now = new Date();
+        const time = now.toLocaleTimeString();
+        const timestamp = `[${time}]`;
+        console.error(`%c${timestamp}`, `color: ${syxlog.colors.error}; font-weight: bold;`, ...data);
+    }
 }
 
 export default syxlog;

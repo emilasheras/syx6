@@ -2,15 +2,15 @@
 
 ## 📌 Tareas
 
-- [ ] Entregar a través de un enlace al último commit en el repositorio de GitHub llamado "PreEntrega2+[Apellido]".
+- [x] Entregar a través de un enlace al último commit en el repositorio de GitHub llamado "PreEntrega2+[Apellido]".
 
 ## Componentes a Desarrollar:
-- [ ] Componente `NavBar` con icono de carrito (`CartWidget`).
-- [ ] Componente `ItemListContainer` que muestra un catálogo con navegación a detalles de producto.
+- [x] Componente `NavBar` con icono de carrito (`CartWidget`).
+- [x] Componente `ItemListContainer` que muestra un catálogo con navegación a detalles de producto.
 - [ ] Componente `ItemDetailContainer` para vistas detalladas de productos.
 
 ## Configuración de Enrutamiento:
-- [ ] Configurar rutas en `App.js` usando `BrowserRouter` de `react-router-dom`.
+- [x] Configurar rutas en `App.js` usando `BrowserRouter` de `react-router-dom`.
 - [ ] Establecer rutas: `'/'` para `ItemListContainer`, `'/category/:id'` para `ItemListContainer` filtrado, y `'/item/:id'` para `ItemDetailContainer`.
 - [ ] Implementar enlaces de navegación: el logo lleva a `'/'`, el artículo a `'/item/:id'`, y la categoría en el navbar a `'/category/:categoryId'`.
 
@@ -21,11 +21,6 @@
 ## Notas:
 - [x] Usar `BrowserRouter` en lugar de `HashRouter`.
 - [ ] Usar el id de categoría e ítem como parámetros en la URL.
-
-## Para Entregar:
-- [ ] Incluir GIF demostrando la funcionalidad de navegación.
-- [ ] Nombrar la entrega según el formato proporcionado.
-
 
 ## Transcripción De Audio A Texto
 *Final de la clase 12-12-2023, prof. Conrado*
