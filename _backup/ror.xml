@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://www.syx6.xyz/</title>
+  <link>https://www.syx6.xyz/</link>
+
+<item>
+     <link>https://www.syx6.xyz/</link>
+     <title>Syx6 - Art - Vault - Temple</title>
+     <description>Where art and technology meet</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.syx6.xyz/index.html</link>
+     <title>Syx6 - Art - Vault - Temple</title>
+     <description>Where art and technology meet</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.syx6.xyz/pages/home.html</link>
+     <title>Syx6 - Homepage</title>
+     <description>Syx6 primary homepage. See all the latest posts and illustrations.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.syx6.xyz/pages/gallery.html</link>
+     <title>Syx6 - Art Gallery</title>
+     <description>Syx6 latest posts. Hand drawings. Digital Illustrations. Diffusion Images.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.syx6.xyz/pages/nexus.html</link>
+     <title>Syx6 - Link Nexus</title>
+     <description>Follow Syx6 in other social media.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.syx6.xyz/pages/shop.html</link>
+     <title>Syx6 - Merch Vault</title>
+     <description>The latest Syx6 merch and posts.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.syx6.xyz/pages/about.html</link>
+     <title>[404]</title>
+     <description>[404]</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
