@@ -33,8 +33,10 @@ const NotFoundPageMain = React.lazy(() => import('./pages/NotFoundPage')); // <-
  */
 import urlData from "./data/s6-url-data";
 import getLoadingJSX from "./components/LoadingScaffold/getLoadingJSX";
+import syxlog from "./utils/syxlog";
 
 const App = () => {
+	syxlog.out(`[Call] App()`);
 	return (
 		<Router>
 			<Layout
@@ -63,7 +65,7 @@ const getJSXContent = () => {
 		abt: AbtPageMain,
 	};
 
-	
+
 	return(
 		<Suspense fallback={getLoadingJSX()}>
 			<Routes>
