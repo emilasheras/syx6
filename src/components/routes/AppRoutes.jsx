@@ -1,6 +1,6 @@
 // AppRoutes.jsx
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 // Pages
 const IdxPageMain = React.lazy(() => import("/src/pages/IdxPage"));
@@ -36,7 +36,7 @@ const AppRoutes = () => {
 	};
 	return (
 		<Routes>
-			<Route path="/" element={<IdxPageMain />} />
+			{/* All pages in Url JSON file */}
 			{urlData.map(({ abbreviation, subdirectory, path }, index) => {
 				try {
 					const PageComponent = pageComponents[abbreviation];
@@ -56,7 +56,13 @@ const AppRoutes = () => {
                     return <div>ERROR</div>; // Or some fallback UI 
 				}
 			})}
-			<Route path="*" element={<NotFoundPageMain />} />
+			
+			{/* Redirect `/` => `IdxPage` */}
+            <Route path="/" element={<Navigate to={"/pages/idx"} />} />
+
+			{/* Redirect `*` => `NotFoundPage` */}
+            <Route path="/pages/not-found" element={<NotFoundPageMain />} />
+            <Route path="*" element={<Navigate to={"/pages/not-found"} />} />
 		</Routes>
 	);
 };
