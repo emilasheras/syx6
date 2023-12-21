@@ -1,7 +1,7 @@
 {
     "fromApi": false,
     "mockData": true,
-    "generalClasses": ["s6-post-image", "s6-filter-brightness-75", "rounded-3", "s6-fade-in"],
+    "generalClasses": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"],
     "images" : [
         {
             "alt": "post image inside gallery",
@@ -10,13 +10,13 @@
         },
         {
             "alt": "post image inside gallery",
-            "path": "/src/assets/images/posts/TestAsset002.jpg",
-            "extraClasses": []
+            "path": "/src/assets/images/posts/TestAsset003.jpg",
+            "extraClasses": ["img-tall", "img-wide"]
         },
         {
             "alt": "post image inside gallery",
-            "path": "/src/assets/images/posts/TestAsset003.jpg",
-            "extraClasses": ["img-tall", "img-wide"]
+            "path": "/src/assets/images/posts/TestAsset002.jpg",
+            "extraClasses": []
         },
         {
             "alt": "post image inside gallery",

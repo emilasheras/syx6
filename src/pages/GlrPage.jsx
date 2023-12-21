@@ -29,7 +29,7 @@ export default function MainContent(){
 				<div className="gallery">
 					{
 						imageData?.images.map((img, index) => {		
-							return <Post key={index} img={img} index={index} generalClasses={generalClasses} />
+							return <Post key={index} img={img} index={index} generalClasses={generalClasses} animateEntrance={true} />
 						})
 					}
 				</div>
