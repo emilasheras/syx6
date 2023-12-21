@@ -1,7 +1,7 @@
 {
     "fromApi": false,
     "mockData": true,
-    "generalClasses": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"],
+    "generalClasses": ["s6-post-image", "s6-filter-brightness-75", "rounded-3", "s6-fade-in"],
     "images" : [
         {
             "alt": "post image inside gallery",
@@ -16,7 +16,7 @@
         {
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset003.jpg",
-            "extraClasses": []
+            "extraClasses": ["img-tall", "img-wide"]
         },
         {
             "alt": "post image inside gallery",
@@ -26,17 +26,17 @@
         {
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset005.jpg",
-            "extraClasses": []
+            "extraClasses": ["img-tall"]
         },
         {
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset006.jpg",
-            "extraClasses": ["img-tall"]
+            "extraClasses": []
         },
         {
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset007.jpg",
-            "extraClasses": ["img-tall"]
+            "extraClasses": []
         }
     ]
 }
