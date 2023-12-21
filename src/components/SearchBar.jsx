@@ -41,7 +41,7 @@ const SearchBar = () => {
 
     return (
         <>
-        <section className="row">
+        <section className="row s6-no-margin">
             <div className="col-12">
                 <div className="section-seachbar">
                     <div className="searchbar-container">
@@ -64,7 +64,7 @@ const SearchBar = () => {
                 </div>
             </div>
         </section>
-        <hr/>
+        <hr className='s6-no-margin' />
         </>
     )
 }

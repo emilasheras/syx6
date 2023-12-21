@@ -1,4 +1,5 @@
 import { useLayoutEffect } from "react";
+import PageHeader from "../components/page-heading/Default";
 import syxlog from "../utils/syxlog";
 const IMAGE_DATA_PATH = "/src/data/gallery-image-data.json";
 
@@ -8,8 +9,6 @@ export default function MainContent(){
 		syxlog.debug(`[Call] galleryFadeIn()`); // todo: remove
 		// Get data dynamically
 		getImageData(IMAGE_DATA_PATH).then(imageData => {
-			syxlog.debug(`imageData:`, imageData); // todo: remove
-
 			// Make sure imageData is defined
 			if (!imageData) {
 				throw new Error('ImageData is undefined or could not be fetched.');
@@ -33,30 +32,14 @@ export default function MainContent(){
 
 	// todo: make everything be inside a single section component
 	// todo: change static content to dynamic content
+	const title = "Gallery";
+	const extraMessage = "I tore myself away from the captivating embrace of heart, heavy with both wonder and trepidation. Art and emotion merged. Code dissolved into one enigmatic tapestry";
     return (
 		<section className="s6-layout-fluid">
-			<section className="s6-layout-fluid">
-				<div className="row">
-					<div className="col-12 text-center">
-						<h1>Gallery</h1>
-					</div>
-				</div>
-				<div className="row justify-content-center">
-					<div className="col-11 text-center">
-						<p>
-							I tore myself away from the captivating embrace of heart, heavy with both wonder and
-							trepidation. Art and emotion merged. Code dissolved into one enigmatic tapestry
-						</p>
-					</div>
-				</div>
-
-			</section>
-			<hr />
+			<PageHeader title={title} extraMessage={extraMessage}/>
 			<section>
 				{/* <!-- in order: default, small, medium, large, extra-large --> */}
-				<div className="gallery">
-					<slot />
-				</div>
+				<div className="gallery"></div>
 			</section>
 		</section>
     );

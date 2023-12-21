@@ -1,11 +1,13 @@
+import PageHeader from "../components/page-heading/Default";
 // todo: finish implementation
 export default function MainContent(){
-	
+	const title = "ShpPage";
+	const extraMessage = "Digital Assets and Merchandise"
     return (
 		<section className="s6-layout-fluid">
 			<section className="row">
 				<div className="col text-center">
-					<h1>Shop</h1>
+					<PageHeader title={title} extraMessage={extraMessage}/>
 					<div className="row justify-content-center">
 						<div className="col-12 col-sm-8 col-xl-6 pb-3 pt-3">
 	

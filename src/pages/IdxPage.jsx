@@ -2,7 +2,7 @@ import React from 'react';
 // import { useState, useEffect } from 'react';
 import useFetchData from '../hooks/useFetchData';
 import getLoadingJSX from '../components/loading-scaffold/getLoadingJSX';
-
+import PageHeader from "../components/page-heading/Default";
 export default function MainContent() {
     const { data, loading, error } = useFetchData('/src/data/index-html.json');
 
@@ -13,8 +13,12 @@ export default function MainContent() {
     const sectionSeparator = data.separator??''; //! <- Sanitize this data before using it
 
     console.log('MainContent Rendered');
+    const title = "Index";
+    const extraMessage = "I am a prisoner of my own design. I am a prisoner of my own device."
     return (
         <section className='s6-layout-read'>
+            <PageHeader title={title} extraMessage={extraMessage}></PageHeader>
+
             {
                 // Check if there are any sections to render
                 sectionsToArray &&

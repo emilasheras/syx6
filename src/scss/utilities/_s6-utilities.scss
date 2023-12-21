@@ -1,7 +1,14 @@
 /* s6 Helper Styles */
 
 .#{$lib-prefix}{
-	
+	&-no-margin{
+		margin: 0;
+	}
+
+	&-no-padding{
+		padding: 0;
+	}
+
 	&-debug-bg {
 		background-color: $s6-debug-color;
 	}
