@@ -15,6 +15,7 @@ import NotFoundPageMain from "/src/pages/NotFoundPage";
 // Data 
 import urlData from "/src/data/s6-url-data";
 import syxlog from "/src/utils/syxlog";
+import RoutesFromJson from "./RoutesFromJson";
 
 const AppRoutes = () => {
     let location = useLocation();
@@ -37,26 +38,10 @@ const AppRoutes = () => {
 	return (
 		<Routes>
 			{/* All pages in Url JSON file */}
-			{urlData.map(({ abbreviation, subdirectory, path }, index) => {
-				try {
-					const PageComponent = pageComponents[abbreviation];
-					if (!PageComponent)
-						throw Error(
-							`The [${abbreviation}] abbreviation index wasnt found inside the [pageComponents] object, but is defined in [s6-url-data.js]`
-						);
-					return (
-						<Route
-							key={index + abbreviation}
-							path={subdirectory + path}
-							element={<PageComponent />}
-						/>
-					);
-				} catch (error) {
-                    syxlog.error(error);
-                    return <div>ERROR</div>; // Or some fallback UI 
-				}
-			})}
-			
+			{/* <RoutesFromJson urlData={urlData} pageComponents={pageComponents} /> */}
+			{ RoutesFromJson({urlData, pageComponents}) }
+
+
 			{/* Redirect `/` => `IdxPage` */}
             <Route path="/" element={<Navigate to={"/pages/idx"} />} />
 
