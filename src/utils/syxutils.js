@@ -1,0 +1,23 @@
+/**
+ * Custom Utilities class
+ * @class syxutils
+ * @description Custom Utilities class
+ */
+class syxutils {
+    static empty(value) {
+        return (
+            value === undefined || // `undefined` (typeof undefined)
+            value === null || // `null` (typeof null === 'object')
+            value === false || // `false` (boolean)
+            value === 0 || // `0` (integer)
+            value === '' || // `''` (empty string)
+            //value === '0' || //! exclusive to php `'0'` (string containing a single zero character)
+            (Array.isArray(value) && value.length === 0) || // `[]` (empty array)
+            (typeof value === 'object' && value !== null && Object.keys(value).length === 0) // `{}` (empty object)
+        );
+    }
+}
+
+export default syxutils;
+
+//context: made in need for a simple way to check if a value is empty like in php.
