@@ -11,11 +11,13 @@ const ShpPageMain = React.lazy(() => import("/src/pages/ShpPage"));
 const ClgPageMain = React.lazy(() => import("/src/pages/ClgPage"));
 const AbtPageMain = React.lazy(() => import("/src/pages/AbtPage"));
 import NotFoundPageMain from "/src/pages/NotFoundPage";
+// Gallery Subpages
+const AssetPageMain = React.lazy(() => import("/src/pages/glr/AssetPage"));
 
 // Data 
 import urlData from "/src/data/s6-url-data";
 import syxlog from "/src/utils/syxlog";
-import RoutesFromJson from "./RoutesFromJson";
+import RoutesFromJson from "./RoutesFromJson"; 
 
 const AppRoutes = () => {
     let location = useLocation();
@@ -26,21 +28,23 @@ const AppRoutes = () => {
 	}, [location]);
 
 
-    const pageComponents = {
-		idx: IdxPageMain,
-		hme: HmePageMain,
-		glr: GlrPageMain,
-		nxs: NxsPageMain,
-		shp: ShpPageMain,
-		clg: ClgPageMain,
-		abt: AbtPageMain,
+    const componentMapping = {
+		"index": IdxPageMain,
+		"home": HmePageMain,
+		"gallery": GlrPageMain,
+		"nexus": NxsPageMain,
+		"shop": ShpPageMain,
+		"changelog": ClgPageMain,
+		"about": AbtPageMain,
+		"asset": AssetPageMain,
+		"enhance": () => <div>EnhancePage [to do: add content]</div>, //! Placeholder
+		"process": () => <div>ProcessPage [to do: add content]</div>, //! Placeholder
 	};
+
 	return (
 		<Routes>
 			{/* All pages in Url JSON file */}
-			{/* <RoutesFromJson urlData={urlData} pageComponents={pageComponents} /> */}
-			{ RoutesFromJson({urlData, pageComponents}) }
-
+			{ RoutesFromJson({urlData, componentMapping}) }
 
 			{/* Redirect `/` => `IdxPage` */}
             <Route path="/" element={<Navigate to={"/pages/idx"} />} />
