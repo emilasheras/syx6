@@ -10,12 +10,12 @@
         },
         {
             "alt": "post image inside gallery",
-            "path": "/src/assets/images/posts/TestAsset002.jpg",
-            "extraClasses": []
+            "path": "/src/assets/images/posts/TestAsset003.jpg",
+            "extraClasses": ["img-tall", "img-wide"]
         },
         {
             "alt": "post image inside gallery",
-            "path": "/src/assets/images/posts/TestAsset003.jpg",
+            "path": "/src/assets/images/posts/TestAsset002.jpg",
             "extraClasses": []
         },
         {
@@ -26,17 +26,17 @@
         {
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset005.jpg",
-            "extraClasses": []
+            "extraClasses": ["img-tall"]
         },
         {
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset006.jpg",
-            "extraClasses": ["img-tall"]
+            "extraClasses": []
         },
         {
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset007.jpg",
-            "extraClasses": ["img-tall"]
+            "extraClasses": []
         }
     ]
 }

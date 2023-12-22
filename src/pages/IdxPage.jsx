@@ -4,7 +4,7 @@ import useFetchData from '../hooks/useFetchData';
 import getLoadingJSX from '../components/loading-scaffold/getLoadingJSX';
 import PageHeader from "../components/page-heading/Default";
 export default function MainContent() {
-    const { data, loading, error } = useFetchData('/src/data/index-html.json');
+    const { data, isLoading:loading, error } = useFetchData('/src/data/index-html.json');
 
     if(loading) return getLoadingJSX('text');
     if(error) return <p>Error: {error.message}</p>; //! <- Cant this be shown in a popup modal?

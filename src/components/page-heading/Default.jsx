@@ -7,7 +7,7 @@ const Default = ({title, extraMessage}) => {
             <section>
                 <div className="row">
                     <div className="col-12 text-center">
-                        <h1>{title}</h1>
+                        <h1 className='s6-h1-bold'>{title}</h1>
                     </div>
                 </div>
                 <div className="row justify-content-center">

@@ -1,7 +1,7 @@
 import PageHeader from "../components/page-heading/Default";
 // todo: finish implementation
 export default function MainContent(){
-	const title = "ShpPage";
+	const title = "Shop";
 	const extraMessage = "Digital Assets and Merchandise"
     return (
 		<section className="s6-layout-fluid">

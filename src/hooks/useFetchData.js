@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 const useFetchData = (url) => {
     const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     const networkErrorMsg = 'Network response was not ok.';
@@ -29,7 +29,7 @@ const useFetchData = (url) => {
         fetchData();
     }, [url]); // <- Re-run the effect if the URL changes
 
-    return { data, loading, error };
+    return { data, isLoading, error };
 };
 
 export default useFetchData;

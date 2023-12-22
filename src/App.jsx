@@ -17,7 +17,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Layout from "./components/Layout";
 import HeaderDefault from "./components/header/HeaderDefault";
 import SearchBar from "./components/SearchBar";
-import FooterDefault from "./components/Footer/FooterDefault";
+import FooterDefault from "./components/footer/FooterDefault";
 import AppRoutes from "./components/routes/AppRoutes";
 
 /**
