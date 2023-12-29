@@ -1,0 +1,40 @@
+.#{$lib-prefix}-post-image {
+    position: relative; // so that the child elements can be positioned absolutely relative to this wrapper.
+    
+    //? this is just the same as in the gallery.scss.. I currently dont know if i should keep it here or not
+    /**
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
+    */
+
+    .#{$lib-prefix}-post-brille {
+        // Positioning
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        // Display
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        // Opacity
+        color: white;
+        opacity: 0;
+        background: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+        transition: opacity 0.3s;
+    }
+
+    &:hover {
+        .#{$lib-prefix}-post-brille {
+            opacity: 1;
+        }
+    }
+}
