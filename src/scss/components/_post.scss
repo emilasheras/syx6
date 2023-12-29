@@ -1,15 +1,19 @@
+.#{$lib-prefix}-media-inspector{
+    img {
+        // width: 100%;
+        // height: 100%;
+        // object-fit: cover;
+        // overflow: hidden;
+        max-height: 90vh;
+    }
+}
+
 .#{$lib-prefix}-post-image {
     position: relative; // so that the child elements can be positioned absolutely relative to this wrapper.
-    
+
     //? this is just the same as in the gallery.scss.. I currently dont know if i should keep it here or not
-    /**
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        overflow: hidden;
-    }
-    */
+    
+    
 
     .#{$lib-prefix}-post-brille {
         // Positioning

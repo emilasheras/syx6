@@ -4,6 +4,8 @@
     "generalClasses": ["s6-post-image", "s6-filter-brightness-75", "rounded-3"],
     "images" : [
         {
+            "id": "temple-1",
+
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset001.jpg",
             "extraClasses": [],
@@ -14,6 +16,8 @@
             "description": "Gothic fortress temple, black ink on paper, 2023."
         },
         {
+            "id": "vile-displacer",
+
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset002.jpg",
             "extraClasses": [],
@@ -24,6 +28,8 @@
             "description": "A wild navigator; the devil's machine."
         },
         {
+            "id": "another-perspective",
+
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset003.jpg",
             "extraClasses": ["img-tall", "img-wide"],
@@ -34,6 +40,8 @@
             "description": "Inspired on Yes' Relayer album. Gift drawing for a friend. 20xx."
         },
         {
+            "id": "ecstasy",
+
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset004.jpg",
             "extraClasses": [],
@@ -44,6 +52,8 @@
             "description": "6th winged angel, 2023."
         },
         {
+            "id": "teratoma-vanth",
+
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset005.jpg",
             "extraClasses": ["img-tall"],
@@ -54,6 +64,8 @@
             "description": ""
         },
         {
+            "id": "space-delirium",
+
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset006.jpg",
             "extraClasses": [],
@@ -64,6 +76,8 @@
             "description": "14hs\nacross two weeks,\nAnd a detailed look of the process."
         },
         {
+            "id": "space-delirium-2",
+
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset007.jpg",
             "extraClasses": [],
