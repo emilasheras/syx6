@@ -4,12 +4,12 @@ import getLoadingJSX from "../components/loading-scaffold/getLoadingJSX";
 import Post from "../components/post/Post";
 import syxlog from '../utils/syxlog';
 import { useNavigate } from 'react-router-dom';
+const IMAGE_DATA_PATH = "/public/gallery-image-data.json";
 
 
 export default function MainContent(){
-    const navigate = useNavigate();
-	const IMAGE_DATA_PATH = "/src/data/gallery-image-data.json";
 	const { data:imageData, isLoading, error } = useFetchData(IMAGE_DATA_PATH);
+    const navigate = useNavigate();
 	
 	// Vars
 	const title = "Gallery";

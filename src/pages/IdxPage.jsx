@@ -1,13 +1,15 @@
 import React from 'react';
-// import { useState, useEffect } from 'react';
 import useFetchData from '../hooks/useFetchData';
 import getLoadingJSX from '../components/loading-scaffold/getLoadingJSX';
 import PageHeader from "../components/page-heading/Default";
+const INDEX_HTML_DATA_PATH = '/public/index-html.json'; //todo: CHANGE FOR API CALL. Currently using a local file instead (this is why there is a `@app/public/public` folder which might seem redundant)
+
 export default function MainContent() {
-    const { data, isLoading:loading, error } = useFetchData('/src/data/index-html.json');
+    // Fetch data from API. 
+    const { data, isLoading:loading, error } = useFetchData(INDEX_HTML_DATA_PATH); 
 
     if(loading) return getLoadingJSX('text');
-    if(error) return <p>Error: {error.message}</p>; //! <- Cant this be shown in a popup modal?
+    if(error) return <p>Error: {error.message}</p>;
 
     const sectionsToArray = data.sections?Object.values(data.sections):'';
     const sectionSeparator = data.separator??''; //! <- Sanitize this data before using it

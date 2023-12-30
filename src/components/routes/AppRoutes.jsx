@@ -3,20 +3,20 @@ import React from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 // Pages
-const IdxPageMain = React.lazy(() => import("/src/pages/IdxPage"));
-const HmePageMain = React.lazy(() => import("/src/pages/HmePage"));
-const GlrPageMain = React.lazy(() => import("/src/pages/GlrPage"));
-const NxsPageMain = React.lazy(() => import("/src/pages/NxsPage"));
-const ShpPageMain = React.lazy(() => import("/src/pages/ShpPage"));
-const ClgPageMain = React.lazy(() => import("/src/pages/ClgPage"));
-const AbtPageMain = React.lazy(() => import("/src/pages/AbtPage"));
-import NotFoundPageMain from "/src/pages/NotFoundPage";
+const IdxPageMain = React.lazy(() => import("../../pages/IdxPage"));
+const HmePageMain = React.lazy(() => import("../../pages/HmePage"));
+const GlrPageMain = React.lazy(() => import("../../pages/GlrPage"));
+const NxsPageMain = React.lazy(() => import("../../pages/NxsPage"));
+const ShpPageMain = React.lazy(() => import("../../pages/ShpPage"));
+const ClgPageMain = React.lazy(() => import("../../pages/ClgPage"));
+const AbtPageMain = React.lazy(() => import("../../pages/AbtPage"));
+import NotFoundPageMain from "../../pages/NotFoundPage";
 // Gallery Subpages
-const AssetPageMain = React.lazy(() => import("/src/pages/glr/AssetPage"));
+const AssetPageMain = React.lazy(() => import("../../pages/glr/AssetPage"));
 
 // Data 
-import urlData from "/src/data/s6-url-data";
-import syxlog from "/src/utils/syxlog";
+import urlData from "../../data/s6-url-data";
+import syxlog from "../../utils/syxlog";
 import RoutesFromJson from "./RoutesFromJson"; 
 
 const AppRoutes = () => {
@@ -43,11 +43,11 @@ const AppRoutes = () => {
 
 	return (
 		<Routes>
-			{/* All pages in Url JSON file */}
-			{ RoutesFromJson({urlData, componentMapping}) }
-
 			{/* Redirect `/` => `IdxPage` */}
             <Route path="/" element={<Navigate to={"/pages/idx"} />} />
+
+			{/* All pages in Url JSON file */}
+			{ RoutesFromJson({urlData, componentMapping}) }
 
 			{/* Redirect `*` => `NotFoundPage` */}
             <Route path="/pages/not-found" element={<NotFoundPageMain />} />

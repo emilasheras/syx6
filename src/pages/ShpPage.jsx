@@ -1,4 +1,7 @@
 import PageHeader from "../components/page-heading/Default";
+import Syx6Insignia from "../assets/images/posts/compressed/Syx6Insignia.png";
+
+
 // todo: finish implementation
 export default function MainContent(){
 	const title = "Shop";
@@ -15,15 +18,15 @@ export default function MainContent(){
 								<div className="carousel-inner justify-content-center">
 									<div className="carousel-item w-10 active" data-bs-interval="4000">
 										<img alt="article image" className="s6-filter-brightness-75 rounded-5"
-											src="/src/assets/images/posts/compressed/Syx6Insignia.png" />
+											src={Syx6Insignia} />
 									</div>
 									<div className="carousel-item w-10" data-bs-interval="4000">
 										<img alt="article image" className="s6-filter-brightness-75 rounded-5"
-											src="/src/assets/images/posts/compressed/Syx6Insignia.png" />
+											src={Syx6Insignia} />
 									</div>
 									<div className="carousel-item w-10" data-bs-interval="4000">
 										<img alt="article image" className="s6-filter-brightness-75 rounded-5"
-											src="/src/assets/images/posts/compressed/Syx6Insignia.png" />
+											src={Syx6Insignia} />
 									</div>
 								</div>
 							</div>
@@ -37,27 +40,27 @@ export default function MainContent(){
 						<div className="row row-cols-5 g-1 g-sm-3 g-md-5">
 							<article className="col">
 								<div className="s6-img-container">
-									<img alt="article image" src="/src/assets/images/posts/compressed/Syx6Insignia.png" className="s6-filter-brightness-75 rounded-2"/>
+									<img alt="article image" src={Syx6Insignia} className="s6-filter-brightness-75 rounded-2"/>
 								</div>
 							</article>
 							<article className="col">
 								<div className="s6-img-container">
-									<img alt="article image" src="/src/assets/images/posts/compressed/Syx6Insignia.png" className="s6-filter-brightness-75 rounded-2"/>
+									<img alt="article image" src={Syx6Insignia} className="s6-filter-brightness-75 rounded-2"/>
 								</div>
 							</article>
 							<article className="col">
 								<div className="s6-img-container">
-									<img alt="article image" src="/src/assets/images/posts/compressed/Syx6Insignia.png" className="s6-filter-brightness-75 rounded-2"/>
+									<img alt="article image" src={Syx6Insignia} className="s6-filter-brightness-75 rounded-2"/>
 								</div>
 							</article>
 							<article className="col">
 								<div className="s6-img-container">
-									<img alt="article image" src="/src/assets/images/posts/compressed/Syx6Insignia.png" className="s6-filter-brightness-75 rounded-2"/>
+									<img alt="article image" src={Syx6Insignia} className="s6-filter-brightness-75 rounded-2"/>
 								</div>
 							</article>
 							<article className="col">
 								<div className="s6-img-container">
-									<img alt="article image" src="/src/assets/images/posts/compressed/Syx6Insignia.png" className="s6-filter-brightness-75 rounded-2"/>
+									<img alt="article image" src={Syx6Insignia} className="s6-filter-brightness-75 rounded-2"/>
 								</div>
 							</article>
 						</div>
@@ -76,25 +79,25 @@ export default function MainContent(){
 								<article className="col">
 									<p className="text-nowrap">[Desk Mats]</p>
 									<div>
-										<img alt="article image" src="/src/assets/images/posts/compressed/Syx6Insignia.png" className="rounded-circle s6-filter-brightness-75 s6-aspect-ratio-square-1"/>
+										<img alt="article image" src={Syx6Insignia} className="rounded-circle s6-filter-brightness-75 s6-aspect-ratio-square-1"/>
 									</div>
 								</article>
 								<article className="col">
 									<p className="text-nowrap">[Metal Pins]</p>
 									<div>
-										<img alt="article image" src="/src/assets/images/posts/compressed/Syx6Insignia.png" className="rounded-circle s6-filter-brightness-75 s6-aspect-ratio-square-1"/>
+										<img alt="article image" src={Syx6Insignia} className="rounded-circle s6-filter-brightness-75 s6-aspect-ratio-square-1"/>
 									</div>
 								</article>
 								<article className="col">
 									<p className="text-nowrap">[Prints]</p>
 									<div>
-										<img alt="article image" src="/src/assets/images/posts/compressed/Syx6Insignia.png" className="rounded-circle s6-filter-brightness-75 s6-aspect-ratio-square-1"/>
+										<img alt="article image" src={Syx6Insignia} className="rounded-circle s6-filter-brightness-75 s6-aspect-ratio-square-1"/>
 									</div>
 								</article>
 								<article className="col">
 									<p className="text-nowrap">[Clothing]</p>
 									<div>
-										<img alt="article image" src="/src/assets/images/posts/compressed/Syx6Insignia.png" className="rounded-circle s6-filter-brightness-75 s6-aspect-ratio-square-1"/>
+										<img alt="article image" src={Syx6Insignia} className="rounded-circle s6-filter-brightness-75 s6-aspect-ratio-square-1"/>
 									</div>
 								</article>
 							</div>

@@ -21,6 +21,10 @@ const Post = ({img, index = 1, generalClasses, animateEntrance = false, onClick}
     }
 
     
+    // todo: add a loading animation for the images
+
+    //! currently doesnt work in production. Vite doesnt translate the paths inside my json files, sadly.
+    // todo: change the `img.path` to a public resource on the server (Firebase? Amplify?) 
     return (
         <article key={index+img.id} className={classes} onClick={onClick}>
             <img alt={img.alt} src={img.path} />

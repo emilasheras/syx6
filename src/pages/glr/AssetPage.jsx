@@ -5,10 +5,10 @@ import PageHeader from "../../components/page-heading/Default";
 import Post from "../../components/post/Post";
 import useFetchData from "../../hooks/useFetchData";
 import getLoadingJSX from "../../components/loading-scaffold/getLoadingJSX";
+const IMAGE_DATA_PATH = "/public/gallery-image-data.json";
 
 function AssetPage() {
 	const { id } = useParams();
-	const IMAGE_DATA_PATH = "/src/data/gallery-image-data.json";
 	const { data:imageData, isLoading, error } = useFetchData(IMAGE_DATA_PATH);
 	
 	// Early return if isLoading or error
