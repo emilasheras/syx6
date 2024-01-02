@@ -17,15 +17,6 @@
         object-fit: cover;
         overflow: hidden;
     }
-
-    .s6-fade-in {
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-    }
-    
-    .s6-fade-in-loaded {
-        opacity: 1;
-    }
     
     @media screen and (min-width: map.get($grid-breakpoints-bs5, sm)) {
         .img-tall {

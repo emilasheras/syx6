@@ -10,7 +10,7 @@ const useInView = (options) => {
         const observer = new IntersectionObserver(([entry]) => {
             setIsInView(entry.isIntersecting);
             if (entry.isIntersecting) {
-                observer.unobserve(elementRef);
+                observer.unobserve(elementRef); //? optional: retriggers when element is visible again
             }
         }, options);
 
