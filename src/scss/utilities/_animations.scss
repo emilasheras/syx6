@@ -83,3 +83,21 @@ hr {
     width: 100%;
   }
 }
+
+/* SyxParagraph.jsx */
+@keyframes syxAnimateOpacity10 {
+  to {
+    opacity: 1;
+  }
+}
+
+.character {
+  opacity: 0; /* Start with characters hidden */
+  white-space: normal; /* Preserve the white space for space characters */
+}
+
+.character.animate {
+  animation:  syxAnimateOpacity10 0.5s ease forwards, 
+              #{$animation-color-transition} 0.5s linear;
+  animation-delay: calc(10ms * var(--char-index)); /* Delay based on character index */
+}

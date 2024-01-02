@@ -1,4 +1,5 @@
 import PageHeader from "../components/page-heading/Default";
+import SyxParagraph from "../components/paragraph/SyxParagraph";
 
 export default function MainContent(){
 	const title = "About";
@@ -9,12 +10,11 @@ export default function MainContent(){
 			<div className="row justify-content-center">
 				<div className="col-11">
 					<q>
-						<p>Syx6 is, in itself, just a recollection of thoughts and traits.</p>
-						<p>A convergence between emotions and code.</p>
-						<p>Additionally, in its flesh, the art from the living, and not.</p>
+						<SyxParagraph text="Syx6 is, in itself, just a recollection of thoughts and traits."></SyxParagraph>
+						<SyxParagraph text="A convergence between emotions and code."></SyxParagraph>
+						<SyxParagraph text="Additionally, in its flesh, the art from the living, and not."></SyxParagraph>
 						
-						<p>... becoming a temple of sorts.</p>
-						<p></p>
+						<SyxParagraph text="... becoming a temple of sorts."></SyxParagraph>
 					</q>
 				</div>
 			</div>

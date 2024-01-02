@@ -2,14 +2,17 @@ import React from 'react';
 import useFetchData from '../hooks/useFetchData';
 import getLoadingJSX from '../components/loading-scaffold/getLoadingJSX';
 import PageHeader from "../components/page-heading/Default";
+import SyxHeading from "../components/heading/SyxHeading";
+import SyxParagraph from "../components/paragraph/SyxParagraph";
 const INDEX_HTML_DATA_PATH = '/public/index-html.json'; //todo: CHANGE FOR API CALL. Currently using a local file instead (this is why there is a `@app/public/public` folder which might seem redundant)
+
 
 export default function MainContent() {
     // Fetch data from API. 
     const { data, isLoading:loading, error } = useFetchData(INDEX_HTML_DATA_PATH); 
 
     if(loading) return getLoadingJSX('text');
-    if(error) return <p>Error: {error.message}</p>;
+    if(error) return <p className='s6-error-string'>Error: {error.message}</p>;
 
     const sectionsToArray = data.sections?Object.values(data.sections):'';
     const sectionSeparator = data.separator??''; //! <- Sanitize this data before using it
@@ -31,11 +34,10 @@ export default function MainContent() {
                     return (
                         <React.Fragment key={index}>
                             <section>
-                                <h2>{section.heading}</h2>
+                                <SyxHeading text={section.heading} />
                                 {
-                                    // Put each paragraph inside a <p> tag
                                     section.content.map((paragraph, index) => {
-                                        return <p key={index}>{paragraph}</p>;
+                                        return <SyxParagraph key={index} text={paragraph}></SyxParagraph>;
                                     })
                                 }
                             </section>

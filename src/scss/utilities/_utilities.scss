@@ -2,6 +2,25 @@
 
 .#{$lib-prefix}{
 
+	// error message string
+	&-error-string{
+		color: $error-color;
+	}
+
+	// opacity range definition from 0.0 to 1.0 in increments of 0.1
+	@for $i from 0 through 10 {
+		$increment: $i * 0.1;
+		&-opacity-#{$i} {
+			opacity: $increment;
+
+			&.animate{
+				animation: syxAnimateOpacity10 0.5s ease forwards;
+				animation-delay: 0.5s;
+			}
+		}
+
+	}
+
 	// todo: add headings
 	&-h1-bold{
 		font-family: 'Astloch-Bold', cursive;

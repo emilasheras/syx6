@@ -13,7 +13,7 @@ function AssetPage() {
 	
 	// Early return if isLoading or error
 	if(isLoading) return getLoadingJSX('text');
-    if(error) return <p>Error: {error.message}</p>;
+    if(error) return <p className="s6-error-string">Error: {error.message}</p>;
 
 	// Vars
 	const title = "Asset";

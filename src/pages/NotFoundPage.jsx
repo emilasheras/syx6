@@ -5,7 +5,7 @@ export default function MainContent(){
     return (
         <>
             <h1>Error {code}</h1>
-            <p>{errorMsg}</p>
+            <p className="s6-error-string">{errorMsg}</p>
         </>
     );
 }

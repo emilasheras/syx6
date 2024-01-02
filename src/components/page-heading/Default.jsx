@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import SyxParagraph from "../paragraph/SyxParagraph";
 
 const Default = ({title, extraMessage}) => {
     return (
@@ -12,7 +13,7 @@ const Default = ({title, extraMessage}) => {
                 </div>
                 <div className="row justify-content-center">
                     <div className="col-11 text-center">
-                        <p>{extraMessage}</p>
+                        <SyxParagraph text={extraMessage}/>
                     </div>
                 </div>
             </section>
