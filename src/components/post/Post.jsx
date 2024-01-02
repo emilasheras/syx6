@@ -15,7 +15,7 @@ const Post = ({img, index = 1, generalClasses, animateEntrance = false, onClick}
     // Define classes
     let classes = (generalClasses) ? generalClasses.join(' ') : '';
     classes += ' ' + img.extraClasses.join(' ');
-    classes = `s6-opacity-0 ${showPost ? "animate" : ""}`;
+    classes += ' ' + `s6-opacity-0 ${showPost ? "animate" : ""}`;
     const style = { "--item-index": index, "--fade-in-ms": FADE_IN_MS + "ms" };
 
     // todo: change the `img.path` to a public resource on the server (Firebase? Amplify?) 
