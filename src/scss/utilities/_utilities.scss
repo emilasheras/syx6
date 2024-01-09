@@ -22,13 +22,18 @@
 	}
 
 	// todo: add headings
-	&-h1-bold{
-		font-family: 'Astloch-Bold', cursive;
-		font-size: 2.5rem;
-		letter-spacing: 2px;
-		font-weight: 900;
-	}
+	@for $i from 1 through 6 {
+		$heading-size: 2.5rem - ($i * 0.5rem);
+		$heading-weight: 900 - ($i * 100);
 
+		&-h#{$i}-bold {
+			font-family: 'Astloch-Bold', cursive;
+			font-size: $heading-size;
+			letter-spacing: 2px;
+			font-weight: $heading-weight;
+		}
+	}
+	
 	&-no-margin{
 		margin: 0;
 	}

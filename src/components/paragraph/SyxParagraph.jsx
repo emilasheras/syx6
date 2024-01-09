@@ -1,10 +1,18 @@
 import PropTypes from "prop-types";
 import useInView from "../../hooks/useInView";
+import syxutils from "../../utils/syxutils";
 
 const SyxParagraph = ({ text }) => {
 	const [isInView, elementRef] = useInView({ threshold: 1 });
 
+	// Skip null or empty text
     if(!text) return null;
+	// Skip empty arrays
+	else if(syxutils.isArray(text) && !syxutils.empty(text)){
+		return text.map((t, i) => <SyxParagraph key={i} text={t}/>);
+	}
+	// Skip if not in view
+	else if(!isInView) return <div ref={elementRef}></div>;
 
 	const characters = text.split("").map((char, index) => ({
 		char,

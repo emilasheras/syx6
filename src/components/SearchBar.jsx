@@ -40,10 +40,8 @@ const SearchBar = () => {
 
 
     return (
-        <>
-        <section className="row s6-no-margin">
+        <section className="row sticky-top section-seachbar s6-no-margin">
             <div className="col-12">
-                <div className="section-seachbar">
                     <div className="searchbar-container">
                         {/* Material Icon */}
                         <span className="material-symbols-outlined s6-search-icon">{searchBarIcon}</span>
@@ -61,11 +59,9 @@ const SearchBar = () => {
                         {/* Searchbar HotKey */}
                         <span className="badge s6-bg-accent">{hotkeyCombination}</span>
                     </div>
-                </div>
             </div>
+            <hr className='s6-no-margin' />
         </section>
-        <hr className='s6-no-margin' />
-        </>
     )
 }
 

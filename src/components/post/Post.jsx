@@ -3,9 +3,12 @@ import PropTypes from 'prop-types'
 import PostBrille from './PostBrille';
 import useInView from '../../hooks/useInView';
 import getLoadingJSX from '../loading-scaffold/getLoadingJSX';
-import React from 'react';
+import { useContext } from 'react';
+import { AssetContext } from '../../context/AssetPageContext';
 
-const Post = ({img, index = 1, generalClasses, animateEntrance = false, onClick}) => {
+const Post = ({index = 1, animateEntrance = false, onClick, isBrilleEnabled = false}) => {
+    // Get the image data
+    const { img, generalClasses } = useContext(AssetContext);
     const FADE_IN_MS = 150;
 	const [isInView, elementRef] = useInView({ threshold: 0.2 });
     const showPost = (isInView || !animateEntrance);
@@ -13,7 +16,7 @@ const Post = ({img, index = 1, generalClasses, animateEntrance = false, onClick}
     
 
     // Define classes
-    let classes = (generalClasses) ? generalClasses.join(' ') : '';
+    let classes = generalClasses.join(' ');
     classes += ' ' + img.extraClasses.join(' ');
     classes += ' ' + `s6-opacity-0 ${showPost ? "animate" : ""}`;
     const style = { "--item-index": index, "--fade-in-ms": FADE_IN_MS + "ms" };
@@ -28,17 +31,18 @@ const Post = ({img, index = 1, generalClasses, animateEntrance = false, onClick}
     return (
         <article ref={elementRef} key={index+img.id} style={style} className={classes} onClick={onClick}>
             <img alt={img.alt} src={img.path} />
-            <PostBrille asset={img}/>
+            {isBrilleEnabled ? <PostBrille asset={img}/> : null}
         </article>
     )
 }
 
 Post.propTypes = {
-    img: PropTypes.object.isRequired,
+    // img: PropTypes.object.isRequired,
     index: PropTypes.number,
-    generalClasses: PropTypes.array,
+    // generalClasses: PropTypes.array,
     animateEntrance: PropTypes.bool,
     onClick: PropTypes.func,
+    isBrilleEnabled: PropTypes.bool,
 }
 
 export default Post

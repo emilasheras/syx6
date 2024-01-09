@@ -4,8 +4,9 @@ import getLoadingJSX from "../components/loading-scaffold/getLoadingJSX";
 import Post from "../components/post/Post";
 import syxlog from '../utils/syxlog';
 import { useNavigate } from 'react-router-dom';
-const IMAGE_DATA_PATH = "/public/gallery-image-data.json";
+import { AssetContext } from "../context/AssetPageContext";
 
+const IMAGE_DATA_PATH = "/public/gallery-image-data.json";
 
 export default function MainContent(){
 	const { data:imageData, isLoading, error } = useFetchData(IMAGE_DATA_PATH);
@@ -35,14 +36,14 @@ export default function MainContent(){
 							}
 
 							return (
-								<Post 
-									key={index} 
-									img={img} 
-									index={index} 
-									generalClasses={generalClasses} 
-									animateEntrance={true} 
-									onClick={navigateToAssetPage}
-								/>
+								<AssetContext.Provider value={{img, generalClasses}} key={index}>
+									<Post 
+										index={index}
+										animateEntrance={true} 
+										onClick={navigateToAssetPage}
+										isBrilleEnabled={true}
+									/>
+								</AssetContext.Provider>
 							)
 						})
 					}

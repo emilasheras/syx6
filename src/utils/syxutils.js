@@ -12,10 +12,19 @@ class syxutils {
             value === 0 || // `0` (integer)
             value === '' || // `''` (empty string)
             //value === '0' || //! exclusive to php `'0'` (string containing a single zero character)
-            (Array.isArray(value) && value.length === 0) || // `[]` (empty array)
-            (typeof value === 'object' && value !== null && Object.keys(value).length === 0) // `{}` (empty object)
+            (this.isArray(value) && value.length === 0) || // `[]` (empty array)
+            (this.isObject(value) && value !== null && Object.keys(value).length === 0) // `{}` (empty object)
         );
     }
+
+    static isArray(value){
+        return Array.isArray(value);
+    }
+
+    static isObject(value){
+        return (typeof value === 'object');
+    }
+
 }
 
 export default syxutils;
