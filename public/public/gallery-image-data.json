@@ -5,87 +5,87 @@
     "images" : [
         {
             "id": "temple-1",
-
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset001.jpg",
             "extraClasses": [],
-
             "title": "Temple - 1",
             "status": "New",
             "categories": ["Black Ink", "Scanned", "White Background", "Rkgk"],
-            "description": "Gothic fortress temple, black ink on paper, 2023."
+            "description": "Gothic fortress temple, black ink on paper, 2023.",
+            "price": 75,
+            "rating": 4.5
         },
         {
             "id": "vile-displacer",
-
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset002.jpg",
             "extraClasses": [],
-
             "title": "Vile Displacer",
             "status": "New",
             "categories": ["Black Ink", "Scanned", "White Background", "Rkgk"],
-            "description": "A wild navigator; the devil's machine."
+            "description": "A wild navigator; the devil's machine.",
+            "price": 50,
+            "rating": 3.8
         },
         {
             "id": "another-perspective",
-
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset003.jpg",
             "extraClasses": ["img-tall", "img-wide"],
-
             "title": "Ənother Pespective",
             "status": "New",
             "categories": ["Black Ink", "Scanned", "White Background", "Long Session Drawing"],
-            "description": "Inspired on Yes' Relayer album. Gift drawing for a friend. 20xx."
+            "description": "Inspired on Yes' Relayer album. Gift drawing for a friend. 20xx.",
+            "price": 100,
+            "rating": 4.2
         },
         {
             "id": "ecstasy",
-
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset004.jpg",
             "extraClasses": [],
-
             "title": "ecstasy",
             "status": "New",
             "categories": ["Black Ink", "Digital", "White Background", "Rkgk"],
-            "description": "6th winged angel, 2023."
+            "description": "Syx winged angel, 2023.",
+            "price": 25,
+            "rating": 4.7
         },
         {
             "id": "teratoma-vanth",
-
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset005.jpg",
             "extraClasses": ["img-tall"],
-
             "title": "Teratoma Vanţh",
             "status": "New",
             "categories": ["Black Ink", "Scanned", "White Background", "Long Session Drawing"],
-            "description": ""
+            "description": "",
+            "price": 0,
+            "rating": 3.5
         },
         {
             "id": "space-delirium",
-
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset006.jpg",
             "extraClasses": [],
-
             "title": "Space Delirium",
             "status": "New",
             "categories": ["Black Ink", "Digital", "White Background", "Long Session Drawing"],
-            "description": "14hs\nacross two weeks,\nAnd a detailed look of the process."
+            "description": "14hs\nacross two weeks,\nAnd a detailed look of the process.",
+            "price": 120,
+            "rating": 4.9
         },
         {
             "id": "space-delirium-2",
-
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset007.jpg",
             "extraClasses": [],
-
             "title": "Space Delirium",
             "status": "New",
             "categories": ["Black Ink", "Digital", "White Background", "Long Session Drawing"],
-            "description": "14hs\nacross two weeks,\nAnd a detailed look of the process."
+            "description": "14hs\nacross two weeks,\nAnd a detailed look of the process.",
+            "price": 80,
+            "rating": 4.1
         }
     ]
 }

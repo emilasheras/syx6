@@ -4,7 +4,7 @@ import getLoadingJSX from "../components/loading-scaffold/getLoadingJSX";
 import Post from "../components/post/Post";
 import syxlog from '../utils/syxlog';
 import { useNavigate } from 'react-router-dom';
-import { AssetContext } from "../context/AssetPageContext";
+import { AssetContext } from "../contexts/AssetPageContext";
 
 const IMAGE_DATA_PATH = "/public/gallery-image-data.json";
 

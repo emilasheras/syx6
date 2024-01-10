@@ -4,7 +4,7 @@ import PostBrille from './PostBrille';
 import useInView from '../../hooks/useInView';
 import getLoadingJSX from '../loading-scaffold/getLoadingJSX';
 import { useContext } from 'react';
-import { AssetContext } from '../../context/AssetPageContext';
+import { AssetContext } from '../../contexts/AssetPageContext';
 
 const Post = ({index = 1, animateEntrance = false, onClick, isBrilleEnabled = false}) => {
     // Get the image data

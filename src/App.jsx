@@ -14,9 +14,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 /**
  * Layout
  */
-import Layout from "./components/Layout";
+import Layout from "./components/layout/Layout";
 import HeaderDefault from "./components/header/HeaderDefault";
-import SearchBar from "./components/SearchBar";
+import SearchBar from "./components/searchbar/SearchBar";
 import FooterDefault from "./components/footer/FooterDefault";
 import AppRoutes from "./components/routes/AppRoutes";
 
@@ -26,17 +26,23 @@ import AppRoutes from "./components/routes/AppRoutes";
 import syxlog from "./utils/syxlog";
 import getLoadingJSX from "./components/loading-scaffold/getLoadingJSX";
 
+import { CartProvider } from "./contexts/CartContext";
+
 const App = () => {
 	syxlog.out(`[Call] App()`);
 	return (
-		<Router>
-			<Layout header={<HeaderDefault />} footer={<FooterDefault />}>
-				<SearchBar />
-				<Suspense fallback={getLoadingJSX()}>
-					<AppRoutes />
-				</Suspense>
-			</Layout>
-		</Router>
+		<CartProvider>
+			<Router>
+				<Layout header={<HeaderDefault />} footer={<FooterDefault />}>
+					<SearchBar />
+					<Suspense fallback={getLoadingJSX()}>
+						{/* BEGIN: Wrap AppRoutes with CartProvider */}
+						<AppRoutes />
+						{/* END: Wrap AppRoutes with CartProvider */}
+					</Suspense>
+				</Layout>
+			</Router>
+		</CartProvider>
 	);
 };
 

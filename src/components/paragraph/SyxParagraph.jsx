@@ -36,7 +36,7 @@ const SyxParagraph = ({ text }) => {
 };
 
 SyxParagraph.propTypes = {
-	text: PropTypes.string.isRequired,
+	text: PropTypes.string,
 };
 
 export default SyxParagraph;

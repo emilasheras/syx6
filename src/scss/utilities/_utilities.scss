@@ -1,6 +1,37 @@
 /* s6 Helper Styles */
 
 .#{$lib-prefix}{
+	@each $i in 1 through 10 {
+		&-line-height-#{$i} {
+			line-height: $i;
+		}
+	}
+	
+	// add m-top, m-bottom, m-left, m-right
+	@for $i from 1 through 10 {
+		&-m-top-#{$i} {
+			margin-top: $i * 0.5rem;
+		}
+		&-m-bottom-#{$i} {
+			margin-bottom: $i * 0.5rem;
+		}
+		&-m-left-#{$i} {
+			margin-left: $i * 0.5rem;
+		}
+		&-m-right-#{$i} {
+			margin-right: $i * 0.5rem;
+		}
+	}
+
+	@for $i from 1 through 10 {
+		&-gap-#{$i}{
+			gap: $i * 0.5rem;
+		}
+	}
+
+	&-d-flex{
+		display: flex;
+	}
 
 	// error message string
 	&-error-string{
@@ -23,7 +54,7 @@
 
 	// todo: add headings
 	@for $i from 1 through 6 {
-		$heading-size: 2.5rem - ($i * 0.5rem);
+		$heading-size: 3.6rem - ($i * 0.8rem);
 		$heading-weight: 900 - ($i * 100);
 
 		&-h#{$i}-bold {

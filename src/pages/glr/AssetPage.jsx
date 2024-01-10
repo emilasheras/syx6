@@ -6,16 +6,17 @@ import Post from "../../components/post/Post";
 import useFetchData from "../../hooks/useFetchData";
 import getLoadingJSX from "../../components/loading-scaffold/getLoadingJSX";
 import Details from "../../components/asset/Details";
-import { AssetContext } from "../../context/AssetPageContext";
+import { AssetContext } from "../../contexts/AssetPageContext";
+import CartSummary from "../../components/cart/CartSummary";
 const IMAGE_DATA_PATH = "/public/gallery-image-data.json";
 
 function AssetPage() {
 	const { id } = useParams();
-	const { data:imageData, isLoading, error } = useFetchData(IMAGE_DATA_PATH);
-	
+	const { data: imageData, isLoading, error } = useFetchData(IMAGE_DATA_PATH);
+
 	// Early return if isLoading or error
-	if(isLoading) return getLoadingJSX('text');
-    if(error) return <p className="s6-error-string">Error: {error.message}</p>;
+	if (isLoading) return getLoadingJSX("text");
+	if (error) return <p className="s6-error-string">Error: {error.message}</p>;
 
 	// Vars
 	const title = "Asset";
@@ -24,12 +25,15 @@ function AssetPage() {
 	const img = imageData?.images.filter((img) => img.id === id)[0];
 	return (
 		<section className="s6-layout-fluid">
-			<AssetContext.Provider value={{img, generalClasses}}>
-				<PageHeader title={title} extraMessage={img.description}/>
-				<section className="s6-media-inspector">
-					<Post/>
-					<Details/>
-				</section>
+			<AssetContext.Provider value={{ img, generalClasses }}>
+				<PageHeader title={title} extraMessage={img.description} />
+				<div className="s6-d-flex s6-gap-1">
+					<section className="s6-media-inspector">
+						<Post />
+						<Details />
+					</section>
+					<CartSummary />
+				</div>
 			</AssetContext.Provider>
 		</section>
 	);

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logoImage from '../assets/images/posts/compressed/sigil-clear.png'; // Import the image
+import logoImage from '../../assets/images/posts/compressed/sigil-clear.png'; // Import the image
 
 /**
  * The logo component. Sometimes it rotates and stuff.

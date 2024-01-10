@@ -1,5 +1,5 @@
-import urlDataNavbar from '../data/s6-url-data.js';
-import { encapsulator, navbarLink, navbarUnorderedList } from '../data/s6-styles.js';
+import urlDataNavbar from '../../data/s6-url-data.js';
+import { encapsulator, navbarLink, navbarUnorderedList } from '../../data/s6-styles.js';
 import { Link } from 'react-router-dom';
 
 

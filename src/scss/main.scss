@@ -1,19 +1,20 @@
-// Imports                                  // Translation:ReactJs
-@import "base/variables";                   // Ok:Ok
-@import 'utilities/mixins';                 // Ok:Ok
-@import "base/reset";                       // Ok:Ok
-@import "base/typography";                  // Ok:Ok
-@import "layout/scrollbar";                 // Ok:Ok
-@import "utilities/selection-highlight";    // Ok:Ok
-@import "layout/body";                      // Ok:Ok
-@import "layout/header";                    // Ok:Ok
-@import "layout/main";                      // Ok:Ok
-@import "layout/gallery";                   // Ok:Ok
-@import "components/search-bar";            // Ok:Ok
-@import "layout/footer";                    // Ok:Ok
-@import "components/navbar-vertical";       // Ok:Ok
-@import "components/buttons";               // Ok:Ok
-@import "utilities/utilities";              // Ok:Ok
-@import "utilities/animations";             // Ok:Ok
-@import "components/post";                  //
-@import "components/pill";                  //
+// Imports
+@import "base/variables";
+@import 'utilities/mixins';
+@import "base/reset";
+@import "base/typography";
+@import "layout/scrollbar";
+@import "utilities/selection-highlight";
+@import "layout/body";
+@import "layout/header";
+@import "layout/main";
+@import "layout/gallery";
+@import "components/search-bar";
+@import "layout/footer";
+@import "components/navbar-vertical";
+@import "components/buttons";
+@import "utilities/utilities";
+@import "utilities/animations";
+@import "components/post";
+@import "components/pill";
+@import "components/cart";
