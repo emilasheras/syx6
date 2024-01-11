@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import PageHeader from "../../components/page-heading/Default";
 import Post from "../../components/post/Post";
 import useFetchData from "../../hooks/useFetchData";
+import useFetchFirestore from "../../hooks/useFetchFirestore";
 import getLoadingJSX from "../../components/loading-scaffold/getLoadingJSX";
 import Details from "../../components/asset/Details";
 import { AssetContext } from "../../contexts/AssetPageContext";
@@ -12,7 +13,10 @@ const IMAGE_DATA_PATH = "/public/gallery-image-data.json";
 
 function AssetPage() {
 	const { id } = useParams();
-	const { data: imageData, isLoading, error } = useFetchData(IMAGE_DATA_PATH);
+	// const { data: imageData, isLoading, error } = useFetchData(IMAGE_DATA_PATH);
+	const { data: imageData, isLoading, error } = useFetchFirestore(IMAGE_DATA_PATH);
+
+	return (<></>);
 
 	// Early return if isLoading or error
 	if (isLoading) return getLoadingJSX("text");

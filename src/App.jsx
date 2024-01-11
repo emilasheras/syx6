@@ -27,22 +27,25 @@ import syxlog from "./utils/syxlog";
 import getLoadingJSX from "./components/loading-scaffold/getLoadingJSX";
 
 import { CartProvider } from "./contexts/CartContext";
+import { UserProvider } from './contexts/UserContext';
 
 const App = () => {
 	syxlog.out(`[Call] App()`);
 	return (
-		<CartProvider>
-			<Router>
-				<Layout header={<HeaderDefault />} footer={<FooterDefault />}>
-					<SearchBar />
-					<Suspense fallback={getLoadingJSX()}>
-						{/* BEGIN: Wrap AppRoutes with CartProvider */}
-						<AppRoutes />
-						{/* END: Wrap AppRoutes with CartProvider */}
-					</Suspense>
-				</Layout>
-			</Router>
-		</CartProvider>
+		<UserProvider>
+			<CartProvider>
+				<Router>
+					<Layout header={<HeaderDefault />} footer={<FooterDefault />}>
+						<SearchBar />
+						<Suspense fallback={getLoadingJSX()}>
+							{/* BEGIN: Wrap AppRoutes with CartProvider */}
+							<AppRoutes />
+							{/* END: Wrap AppRoutes with CartProvider */}
+						</Suspense>
+					</Layout>
+				</Router>
+			</CartProvider>
+		</UserProvider>
 	);
 };
 

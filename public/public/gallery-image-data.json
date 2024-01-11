@@ -5,15 +5,16 @@
     "images" : [
         {
             "id": "temple-1",
+            "title": "Temple - 1",
+            "status": "New",
+            "description": "Gothic fortress temple, black ink on paper, 2023.",
             "alt": "post image inside gallery",
             "path": "/src/assets/images/posts/TestAsset001.jpg",
             "extraClasses": [],
-            "title": "Temple - 1",
-            "status": "New",
             "categories": ["Black Ink", "Scanned", "White Background", "Rkgk"],
-            "description": "Gothic fortress temple, black ink on paper, 2023.",
             "price": 75,
-            "rating": 4.5
+            "rating": 4.5,
+            "stock": 1
         },
         {
             "id": "vile-displacer",

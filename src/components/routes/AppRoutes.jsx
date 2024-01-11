@@ -3,6 +3,8 @@ import React from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 // Pages
+import SignIn from "../auth/form/SignIn";
+import NotFoundPageMain from "../../pages/NotFoundPage";
 const IdxPageMain = React.lazy(() => import("../../pages/IdxPage"));
 const HmePageMain = React.lazy(() => import("../../pages/HmePage"));
 const GlrPageMain = React.lazy(() => import("../../pages/GlrPage"));
@@ -10,48 +12,49 @@ const NxsPageMain = React.lazy(() => import("../../pages/NxsPage"));
 const ShpPageMain = React.lazy(() => import("../../pages/ShpPage"));
 const ClgPageMain = React.lazy(() => import("../../pages/ClgPage"));
 const AbtPageMain = React.lazy(() => import("../../pages/AbtPage"));
-import NotFoundPageMain from "../../pages/NotFoundPage";
 // Gallery Subpages
 const AssetPageMain = React.lazy(() => import("../../pages/glr/AssetPage"));
 
-// Data 
+// Data
 import urlData from "../../data/s6-url-data";
 import syxlog from "../../utils/syxlog";
-import RoutesFromJson from "./RoutesFromJson"; 
+import RoutesFromJson from "./RoutesFromJson";
 
 const AppRoutes = () => {
-    let location = useLocation();
+	let location = useLocation();
 
 	React.useEffect(() => {
 		// Log the path to understand when re-renders occur
 		syxlog.out("Navigated to:", location.pathname);
 	}, [location]);
 
-
-    const componentMapping = {
-		"index": IdxPageMain,
-		"home": HmePageMain,
-		"gallery": GlrPageMain,
-		"nexus": NxsPageMain,
-		"shop": ShpPageMain,
-		"changelog": ClgPageMain,
-		"about": AbtPageMain,
-		"asset": AssetPageMain,
-		"enhance": () => <div>EnhancePage [to do: add content]</div>, //! Placeholder
-		"process": () => <div>ProcessPage [to do: add content]</div>, //! Placeholder
+	const componentMapping = {
+		index: IdxPageMain,
+		home: () => <div>EnhancePage [to do: add content]</div>, //! Placeholder,
+		gallery: GlrPageMain,
+		nexus: NxsPageMain,
+		shop: ShpPageMain,
+		changelog: ClgPageMain,
+		about: AbtPageMain,
+		asset: AssetPageMain,
+		enhance: () => <div>EnhancePage [to do: add content]</div>, //! Placeholder
+		process: () => <div>ProcessPage [to do: add content]</div>, //! Placeholder
 	};
 
 	return (
 		<Routes>
+			{/* SignIn page */}
+			<Route path="/auth/login" element={<SignIn />} />
+
 			{/* Redirect `/` => `IdxPage` */}
-            <Route path="/" element={<Navigate to={"/pages/idx"} />} />
+			<Route path="/" element={<Navigate to={"/pages/idx"} />} />
 
 			{/* All pages in Url JSON file */}
-			{ RoutesFromJson({urlData, componentMapping}) }
+			{RoutesFromJson({ urlData, componentMapping })}
 
 			{/* Redirect `*` => `NotFoundPage` */}
-            <Route path="/pages/not-found" element={<NotFoundPageMain />} />
-            <Route path="*" element={<Navigate to={"/pages/not-found"} />} />
+			<Route path="/pages/not-found" element={<NotFoundPageMain />} />
+			<Route path="*" element={<Navigate to={"/pages/not-found"} />} />
 		</Routes>
 	);
 };

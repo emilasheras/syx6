@@ -11,10 +11,10 @@ const initialCart = {
 
 export const CartProvider = ({ children }) => {
 	const [cart, setCart] = useState(initialCart);
-	syxlog.debug("Initial cart state: ", cart);
+	syxlog.out("Initial cart state: ", cart);
 
 	const addToCart = (item) => {
-		syxlog.debug("Adding to cart: ", item);
+		syxlog.out("Adding to cart: ", item);
 		const updatedItems = [...cart.items, item];
 		const updatedTotal = calculateTotal(updatedItems);
 		setCart({ ...cart, items: updatedItems, total: updatedTotal });

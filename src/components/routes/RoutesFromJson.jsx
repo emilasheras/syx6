@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import PropTypes from "prop-types";
 import syxlog from "../../utils/syxlog";
 import syxutils from "../../utils/syxutils";
+import ProtectedRoute from "./ProtectedRoute";
 
 /**
  * this is probably going to be a array flattening (map) function of sorts...,
@@ -20,27 +21,32 @@ import syxutils from "../../utils/syxutils";
  */
 function RoutesFromJson({ urlData, componentMapping }) {
 
-    return urlData.map(({ name, subdirectory, path, subRoutes }, index) => {
+	return urlData.map(({ name, subdirectory, path, subRoutes, isAuthNeeded }, index) => {
 		try {
-            // get the component from the componentMapping object
-            const PageComponent = componentMapping[name];
+			// get the component from the componentMapping object
+			const PageComponent = componentMapping[name];
 
 			// handle error
 			if (!PageComponent) throw Error(`The [${name}] name index wasnt found inside the [componentMapping] object, but is defined in [s6-url-data.js]`);
 
-            // Define and format a unique key for every Route.
-            // Goes from: {i}/{subdirectory}/{name} to: {i}-{subdirectory}-{name}
-            const uniqueKey = index+(subdirectory+name).replace(/\//g, '-');
+			// Define and format a unique key for every Route.
+			// Goes from: {i}/{subdirectory}/{name} to: {i}-{subdirectory}-{name}
+			const uniqueKey = index+(subdirectory+name).replace(/\//g, '-');
 
-            // Define the Parent Route component
-            const parentRoute = <Route key={uniqueKey} path={subdirectory + path} element={<PageComponent/>} />;            
+			// Define the Parent Route component
+			const parentRoute = (
+				<Route
+					key={uniqueKey}
+					path={subdirectory + path}
+					element={<ProtectedRoute><PageComponent/></ProtectedRoute>}
+				/>
+			);
 
-            // If child routes inside, recursive call to flatten the array
-            if(!syxutils.empty(subRoutes)) {
-                const childRoutes = RoutesFromJson({urlData: subRoutes, componentMapping});
-                return [parentRoute,...childRoutes];
-            }
-
+			// If child routes inside, recursive call to flatten the array
+			if(!syxutils.empty(subRoutes)) {
+				const childRoutes = RoutesFromJson({urlData: subRoutes, componentMapping});
+				return [parentRoute,...childRoutes];
+			}
 			return parentRoute;
 		} catch (error) {
 			syxlog.error(error);
@@ -48,6 +54,7 @@ function RoutesFromJson({ urlData, componentMapping }) {
 		}
 	});
 }
+
 RoutesFromJson.propTypes = {
 	urlData: PropTypes.arrayOf(
 		PropTypes.shape({
@@ -55,9 +62,17 @@ RoutesFromJson.propTypes = {
 			// abbreviation: PropTypes.string.isRequired,
 			subdirectory: PropTypes.string.isRequired,
 			path: PropTypes.string.isRequired,
+			isAuthNeeded: PropTypes.bool.isRequired, // Added isAuthNeeded prop type
 		})
 	).isRequired,
 	componentMapping: PropTypes.objectOf(PropTypes.func).isRequired,
 };
+
+// const ConditionalProtectedRoute = ({ isAuthNeeded, PageComponent }) => {
+// 	if (isAuthNeeded) return <ProtectedRoute isAuthNeeded={isAuthNeeded}><PageComponent /></ProtectedRoute>;
+// 	return <PageComponent />;
+// };
+
+
 
 export default RoutesFromJson;
