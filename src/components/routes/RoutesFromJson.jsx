@@ -38,7 +38,7 @@ function RoutesFromJson({ urlData, componentMapping }) {
 				<Route
 					key={uniqueKey}
 					path={subdirectory + path}
-					element={<ProtectedRoute><PageComponent/></ProtectedRoute>}
+					element={(isAuthNeeded) ? <ProtectedRoute><PageComponent/></ProtectedRoute> : <PageComponent/>}
 				/>
 			);
 
