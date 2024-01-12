@@ -4,6 +4,7 @@ import { UserContext } from '../../../contexts/UserContext';
 import syxutils from '../../../utils/syxutils';
 import Guest from './Guest';
 import SyxParagraph from '../../paragraph/SyxParagraph';
+import SignOutButton from './SignOutButton';
 
 const ProfileWidget = () => {
     const currentUser = useContext(UserContext);
@@ -24,9 +25,9 @@ const AuthenticatedUser = ({currentUser}) => {
     console.log(dateData);
     return (
         <>
-        <SyxParagraph text={userModel.email} />
-        <SyxParagraph text={userModel.metadata.lastLoginAt} />
-        
+            <SyxParagraph text={userModel.email} />
+            <SyxParagraph text={userModel.metadata.lastLoginAt} />
+            <SignOutButton />
         </>
     )
 }
