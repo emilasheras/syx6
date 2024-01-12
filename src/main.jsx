@@ -1,6 +1,6 @@
-// import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
 import syxlog from './utils/syxlog.js';
 
 syxlog.debug(`MODE`,import.meta.env.MODE);
