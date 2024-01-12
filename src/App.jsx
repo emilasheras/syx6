@@ -31,7 +31,6 @@ import { UserProvider } from './contexts/UserContext';
 
 const App = () => {
 	syxlog.out(`[Call] App()`);
-	syxlog.debug(import.meta.env.MODE, import.meta.env.VITE_FIREBASE_API_KEY);
 	return (
 		<UserProvider>
 			<CartProvider>
