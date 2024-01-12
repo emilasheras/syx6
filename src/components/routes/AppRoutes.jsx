@@ -3,7 +3,7 @@ import React from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 // Pages
-import SignIn from "../auth/form/SignIn";
+import ForceAuthForm from "../auth/form/ForceAuthForm";
 import NotFoundPageMain from "../../pages/NotFoundPage";
 const IdxPageMain = React.lazy(() => import("../../pages/IdxPage"));
 const HmePageMain = React.lazy(() => import("../../pages/HmePage"));
@@ -44,7 +44,7 @@ const AppRoutes = () => {
 	return (
 		<Routes>
 			{/* SignIn page */}
-			<Route path="/auth/login" element={<SignIn />} />
+			<Route path="/auth/login" element={<ForceAuthForm />} />
 
 			{/* Redirect `/` => `IdxPage` */}
 			<Route path="/" element={<Navigate to={"/pages/idx"} />} />

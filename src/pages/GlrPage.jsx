@@ -29,9 +29,8 @@ export default function MainContent(){
 				<div className="gallery">
 					{
 						imageData?.images.map((img, index) => {		
-							// Click handler (for gallery images only)
+							//* Click handler (for gallery images only)
 							const navigateToAssetPage = () => {
-								syxlog.debug('Post clicked'); // todo: remove later
 								navigate(`/pages/glr/asset/${img.id}`);
 							}
 

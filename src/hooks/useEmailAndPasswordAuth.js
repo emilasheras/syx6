@@ -7,7 +7,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 
 const useEmailAndPasswordAuth = () => {
-    const { currentUser, setCurrentUser, auth } = useContext(UserContext);
+    const { currentUser, isGuest, setCurrentUser, auth } = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
@@ -53,6 +53,7 @@ const useEmailAndPasswordAuth = () => {
         password,
         setPassword,
         currentUser,
+        isGuest,
         error,
         loading,
         signUp,

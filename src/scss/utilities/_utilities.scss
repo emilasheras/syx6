@@ -52,7 +52,6 @@
 
 	}
 
-	// todo: add headings
 	@for $i from 1 through 6 {
 		$heading-size: 3.6rem - ($i * 0.8rem);
 		$heading-weight: 900 - ($i * 100);

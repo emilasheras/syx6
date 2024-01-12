@@ -29,7 +29,6 @@ class syxlog {
         console.log(`%c${timestamp}`, `color: ${syxlog.colors.debug}; font-weight: bold;`, ...data);
     }
 
-    // todo: Add methods for warn, error, etc. if needed
     static warn(...data) {
         const now = new Date();
         const time = now.toLocaleTimeString();
