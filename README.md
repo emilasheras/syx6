@@ -4,7 +4,7 @@
 
 # 🎃 Syx + ⚛ React + ⚡ Vite
 
-## Brief
+### Brief
 React app made from the [Syx6](https://github.com/emilasheras/s6) project.
 
 ## Quick start
@@ -21,3 +21,24 @@ npm install
 npm run dev
 ```
 4. Open your browser at http://localhost:{{PORT}}
+
+## Production Deployment
+
+1. Clone this repo (see above)
+
+2. Install dependencies (see above)
+
+3. Create and populate the `.env.production` following the structure of `.env.example`
+
+4. Build the app
+```bash
+npm run build
+```
+This creates the dist folder with the static files.
+
+4. Preview the app build
+```bash
+npm run preview
+```
+
+5. Copy the contents of the dist folder to your server and serve it with your favorite web server.
