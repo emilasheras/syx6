@@ -42,3 +42,10 @@ npm run preview
 ```
 
 5. Copy the contents of the dist folder to your server and serve it with your favorite web server.
+
+## Known issues
+
+Rollup missing dependency:
+```bash
+npm install rollup
+```
