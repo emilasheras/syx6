@@ -1,0 +1,106 @@
+[
+	{
+		"name": "Temple - 1",
+		"status": "New",
+		"description": "Gothic fortress temple, black ink on paper, 2023.",
+		"alt": "scanned black ink sketch of a gothic fortress temple. 2023",
+		"path": "",
+		"extraClasses": [],
+		"categories": ["Black Ink", "Scanned", "White Background", "Rkgk"],
+		"price": 75,
+		"rating": 4.5,
+		"stock": "unlimited"
+	},
+	{
+		"alt": "",
+		"path": "",
+		"extraClasses": [],
+		"name": "Vile Displacer",
+		"status": "New",
+		"categories": ["Black Ink", "Scanned", "White Background", "Rkgk"],
+		"description": "A wild navigator; the devil's machine.",
+		"price": 50,
+		"rating": 3.8,
+		"stock": 10
+	},
+	{
+		"alt": "",
+		"path": "",
+		"extraClasses": ["img-tall", "img-wide"],
+		"name": "Ənother Pespective",
+		"status": "New",
+		"categories": [
+			"Black Ink",
+			"Scanned",
+			"White Background",
+			"Long Session Drawing"
+		],
+		"description": "Inspired on Yes' Relayer album. Gift drawing for a friend. 20xx.",
+		"price": 100,
+		"rating": 4.2,
+		"stock": 3
+	},
+	{
+		"alt": "",
+		"path": "",
+		"extraClasses": [],
+		"name": "ecstasy",
+		"status": "New",
+		"categories": ["Black Ink", "Digital", "White Background", "Rkgk"],
+		"description": "Syx winged angel, 2023.",
+		"price": 25,
+		"rating": 4.7,
+		"stock": 4
+	},
+	{
+		"alt": "",
+		"path": "",
+		"extraClasses": ["img-tall"],
+		"name": "Teratoma Vanţh",
+		"status": "New",
+		"categories": [
+			"Black Ink",
+			"Scanned",
+			"White Background",
+			"Long Session Drawing"
+		],
+		"description": "",
+		"price": 0,
+		"rating": 3.5,
+		"stock": 5
+	},
+	{
+		"alt": "",
+		"path": "",
+		"extraClasses": [],
+		"name": "Space Delirium",
+		"status": "New",
+		"categories": [
+			"Black Ink",
+			"Digital",
+			"White Background",
+			"Long Session Drawing"
+		],
+		"description": "14hs\nacross two weeks,\nAnd a detailed look of the process.",
+		"price": 120,
+		"rating": 4.9,
+		"stock": 1
+	},
+	{
+		"alt": "",
+		"path": "",
+		"extraClasses": [],
+		"name": "Space Delirium",
+		"status": "New",
+		"categories": [
+			"Black Ink",
+			"Digital",
+			"White Background",
+			"Long Session Drawing"
+		],
+		"description": "14hs\nacross two weeks,\nAnd a detailed look of the process.",
+		"price": 80,
+		"rating": 4.1,
+		"stock": 1
+	}
+]

@@ -1,5 +1,6 @@
 // useFetchData.js
 import { useState, useEffect } from 'react';
+import syxlog from '../utils/syxlog';
 
 const useFetchData = (url) => {
     const [data, setData] = useState(null);
@@ -20,6 +21,7 @@ const useFetchData = (url) => {
                 setData(data);
                 setError(null);
             } catch (e) {
+                syxlog.warn(e.message);
                 setError(e.message);
             } finally {
                 setLoading(false);

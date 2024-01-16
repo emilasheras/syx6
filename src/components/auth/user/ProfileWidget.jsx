@@ -20,9 +20,7 @@ const AuthenticatedUser = ({currentUser}) => {
     // currentUser.isGuest
     // currentUser.currentUser // <- this is the firebase user object
     const userModel = currentUser.currentUser;
-    console.log(userModel);
-    const dateData = syxutils.getDetailsFromUnixTimestamp(userModel.metadata.lastLoginAt);
-    console.log(dateData);
+    // const dateData = syxutils.getDetailsFromUnixTimestamp(userModel.metadata.lastLoginAt);
     return (
         <>
             <SyxParagraph text={userModel.email} />

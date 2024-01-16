@@ -7,7 +7,7 @@ const urlData = [
         { name: 'process',    subdirectory: '/pages/glr/',     path: 'process/:id',  brief: 'n/a',   subRoutes: [], isAuthNeeded: true},    
     ], isAuthNeeded: true},
     { name: 'nexus',        abbreviation: 'nxs',    subdirectory: '/pages/',     path: 'nxs',    brief: 'n/a',  tags: [],   subRoutes: [], isAuthNeeded: false},
-    { name: 'shop',         abbreviation: 'shp',    subdirectory: '/pages/',     path: 'shp',    brief: 'n/a',  tags: [],   subRoutes: [], isAuthNeeded: false},
+    { name: 'shop',         abbreviation: 'shp',    subdirectory: '/pages/',     path: 'shp',    brief: 'n/a',  tags: [],   subRoutes: [], isAuthNeeded: true},
     { name: 'changelog',    abbreviation: 'clg',    subdirectory: '/pages/',     path: 'clg',    brief: 'n/a',  tags: [],   subRoutes: [], isAuthNeeded: false},
     { name: 'about',        abbreviation: 'abt',    subdirectory: '/pages/',     path: 'abt',    brief: 'n/a',  tags: [],   subRoutes: [], isAuthNeeded: false}
 ];
