@@ -5,7 +5,6 @@ import SyxParagraph from "../paragraph/SyxParagraph";
  * @returns {JSX.Element} - The footer
  */
 export default function FooterDefault() {
-    console.log('FooterDefault Rendered');
     return (
         <>
         <hr/>

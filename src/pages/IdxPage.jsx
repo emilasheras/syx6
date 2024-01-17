@@ -17,7 +17,6 @@ export default function MainContent() {
     const sectionsToArray = data.sections?Object.values(data.sections):'';
     const sectionSeparator = data.separator??''; //! <- Sanitize this data before using it
 
-    console.log('MainContent Rendered');
     const title = "Index";
     const extraMessage = "I am a prisoner of my own design. I am a prisoner of my own device."
     return (

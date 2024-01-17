@@ -16,7 +16,6 @@ import { BrowserRouter as Router } from "react-router-dom";
  */
 import Layout from "./components/layout/Layout";
 import HeaderDefault from "./components/header/HeaderDefault";
-import SearchBar from "./components/searchbar/SearchBar";
 import FooterDefault from "./components/footer/FooterDefault";
 import AppRoutes from "./components/routes/AppRoutes";
 
@@ -28,6 +27,7 @@ import getLoadingJSX from "./components/loading-scaffold/getLoadingJSX";
 
 import { CartProvider } from "./contexts/CartContext";
 import { UserProvider } from './contexts/UserContext';
+import HorizontalNavBar from "./components/navbar/Horizontal";
 
 const App = () => {
 	syxlog.out(`[Call] App()`);
@@ -36,7 +36,7 @@ const App = () => {
 			<CartProvider>
 				<Router>
 					<Layout header={<HeaderDefault />} footer={<FooterDefault />}>
-						<SearchBar />
+						<HorizontalNavBar />
 						<Suspense fallback={getLoadingJSX()}>
 							{/* BEGIN: Wrap AppRoutes with CartProvider */}
 							<AppRoutes />

@@ -1,6 +1,4 @@
-import NavBar from "../navbar/NavBarVertical";
-
+import NavBar from '../navbar/VerticalPrimary';
 export default function HeaderDefault() {
-    console.log('HeaderDefault Rendered');
     return <NavBar/>;
 }

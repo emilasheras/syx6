@@ -1,9 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 
-export default function CartWidget(){
-    console.log('CartWidget Rendered');
-    
+export default function CartWidget(){    
     const { cart, itemsInCart } = useContext(CartContext);
 
     const cartIcons = {

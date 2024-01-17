@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
  * @returns {string} HTML string
  */
 export default function Links() {
-    console.log('Links Rendered');
 
     const getHref = (name) => {
         let href = '/';

@@ -31,7 +31,6 @@ function AssetPage() {
 		};
 	});
 
-	console.log(assets);
 	
 	// Vars
 	const title = "Asset";

@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
 export default function Layout({ header, footer, children }) {
-  console.log('Layout Component Rendered');
   return (
     <>
       <header>{header}</header>
