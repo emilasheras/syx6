@@ -3,7 +3,7 @@ import useInView from "../../hooks/useInView";
 import syxutils from "../../utils/syxutils";
 
 const SyxParagraph = ({ text }) => {
-	const [isInView, elementRef] = useInView({ threshold: 0.4 });
+	const [isInView, elementRef] = useInView({ threshold: 0 });
 
 	// Skip null or empty text
     if(!text) return null;

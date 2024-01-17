@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import useInView from "../../hooks/useInView";
 
 const SyxHeading = ({ text }) => {
-	const [isInView, elementRef] = useInView({ threshold: 1 });
+	const [isInView, elementRef] = useInView({ threshold: 0 });
 
 	return (
 		<h2 ref={elementRef} className={`s6-opacity-0 ${isInView ? "animate" : ""}`}>
