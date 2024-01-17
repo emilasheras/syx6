@@ -4,6 +4,7 @@ import syxlog from "../utils/syxlog";
 
 export const CartContext = createContext();
 
+const DEBUG = false;
 const initialCart = {
 	items: [],
 	total: 0
@@ -11,21 +12,23 @@ const initialCart = {
 
 export const CartProvider = ({ children }) => {
 	const [cart, setCart] = useState(initialCart);
-	syxlog.out("Initial cart state: ", cart);
+	if(DEBUG) syxlog.out("Initial cart state: ", cart);
 
 	const addToCart = (item) => {
-		syxlog.out("Adding to cart: ", item);
+		if(DEBUG) syxlog.out("Adding to cart: ", item);
 		const updatedItems = [...cart.items, item];
 		const updatedTotal = calculateTotal(updatedItems);
 		setCart({ ...cart, items: updatedItems, total: updatedTotal });
 	};
 
 	const calculateTotal = (items) => {
+		if(DEBUG) syxlog.out("Calculating total for: ", items);
 		// Perform the calculation logic here
 		let total = 0;
 		for (const item of items) {
 			total += item.price;
 		}
+		if(DEBUG) syxlog.out("Total: ", total);
 		return total;
 	};
 
