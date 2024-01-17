@@ -5,7 +5,6 @@ import { navbarVertical } from "../../data/s6-styles.js";
 import DrawerMenuNavbar from "../drawer-menu/DrawerMenuNavbar.jsx";
 
 export default function NavBar() {
-    console.log('NavBar Rendered');
     return (
         <nav className={navbarVertical}>
             <Logo/>

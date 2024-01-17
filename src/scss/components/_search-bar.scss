@@ -5,6 +5,8 @@
 	align-items: center;
 	justify-content: center;
 	background-color: $dark-grey;
+    // border-bottom: 1px solid rgba(255, 255, 255, .2); //!debug
+    border-bottom: 1px solid $primary; //!debug
 
 	.searchbar-container {
 		margin: .8rem;
