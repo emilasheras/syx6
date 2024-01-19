@@ -1,27 +1,23 @@
 /* Search Bar Setup */
-.section-seachbar {
+.section-searchbar {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	background-color: $dark-grey;
-    // border-bottom: 1px solid rgba(255, 255, 255, .2); //!debug
-    border-bottom: 1px solid $primary; //!debug
+    border-bottom: 3px solid $dark-green;
+	max-height: $section-searchbar-height;
 
 	.searchbar-container {
-		margin: .8rem;
-		// padding: .8rem;
+		@include section-searchbar__child-dimentions;
 		color: $accent-two;
-		width: 100%;
-		max-width: 20rem;
-		/* padding: 1em; */
+		// max-width: 20rem;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
 		/* set as parent container */
 		position: relative;
-
 
 		.s6-search-icon {
 			color: $dark-grey;

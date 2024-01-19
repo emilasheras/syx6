@@ -5,6 +5,7 @@ import {
 } from "firebase/auth";
 import { useContext, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
+import { FlashPipelineContext } from "../contexts/FlashPipelineContext";
 
 const useEmailAndPasswordAuth = () => {
     const { currentUser, isGuest, setCurrentUser, auth } = useContext(UserContext);
@@ -14,13 +15,17 @@ const useEmailAndPasswordAuth = () => {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
+    const {setFlash} = useContext(FlashPipelineContext);
+
     const signUp = async () => {
         setLoading(true);
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            setCurrentUser(userCredential.currentUser);
+            setFlash(`Signed up ${userCredential.user.email}`);
         } catch (error) {
+            console.error(error);
             setError(error.message);
+            setFlash(`${error.message}`);
         }
         setLoading(false);
     };
@@ -29,9 +34,11 @@ const useEmailAndPasswordAuth = () => {
         setLoading(true);
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
-            setCurrentUser(userCredential.currentUser);
+            setFlash(`Logged in ${userCredential.user.email}`);
         } catch (error) {
+            console.error(error);
             setError(error.message);
+            setFlash(`${error.message}`);
         }
         setLoading(false);
     };
@@ -41,8 +48,11 @@ const useEmailAndPasswordAuth = () => {
         try {
             await firebaseSignOut(auth);
             setCurrentUser(null); // Reset the current currentUser to null after signing out
+            setFlash(`Logged out`);
         } catch (error) {
+            console.error(error);
             setError(error.message);
+            setFlash(`Error: ${error.message}`);
         }
         setLoading(false);
     };

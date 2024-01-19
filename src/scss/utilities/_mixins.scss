@@ -9,3 +9,12 @@
     border-radius: calc($size / 2);
   }
 }
+@mixin section-searchbar__child-dimentions{
+	width: 100%;
+	height: 100%;
+	min-height: $section-searchbar-height;
+  max-height: $section-searchbar-height;
+	margin: 0;
+	padding: 0 0rem;
+	// background-color: $accent;
+}

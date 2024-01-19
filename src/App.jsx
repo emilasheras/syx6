@@ -27,25 +27,28 @@ import getLoadingJSX from "./components/loading-scaffold/getLoadingJSX";
 
 import { CartProvider } from "./contexts/CartContext";
 import { UserProvider } from './contexts/UserContext';
+import { FlashPipelineProvider } from "./contexts/FlashPipelineContext";
 import HorizontalNavBar from "./components/navbar/Horizontal";
 
 const App = () => {
 	syxlog.out(`[Call] App()`);
 	return (
-		<UserProvider>
-			<CartProvider>
-				<Router>
-					<Layout header={<HeaderDefault />} footer={<FooterDefault />}>
-						<HorizontalNavBar />
-						<Suspense fallback={getLoadingJSX()}>
-							{/* BEGIN: Wrap AppRoutes with CartProvider */}
-							<AppRoutes />
-							{/* END: Wrap AppRoutes with CartProvider */}
-						</Suspense>
-					</Layout>
-				</Router>
-			</CartProvider>
-		</UserProvider>
+		<FlashPipelineProvider>
+			<UserProvider>
+				<CartProvider>
+					<Router>
+						<Layout header={<HeaderDefault />} footer={<FooterDefault />}>
+							<HorizontalNavBar />
+							<Suspense fallback={getLoadingJSX()}>
+								{/* BEGIN: Wrap AppRoutes with CartProvider */}
+								<AppRoutes />
+								{/* END: Wrap AppRoutes with CartProvider */}
+							</Suspense>
+						</Layout>
+					</Router>
+				</CartProvider>
+			</UserProvider>
+		</FlashPipelineProvider>
 	);
 };
 

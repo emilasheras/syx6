@@ -32,6 +32,7 @@ export const UserProvider = ({ children }) => {
 	//* note the default value for an unidentified user is `null` (check the firebase docs)
 	const contextVars = {
 		currentUser,
+		setCurrentUser,
 		isGuest,
 		auth
 	};

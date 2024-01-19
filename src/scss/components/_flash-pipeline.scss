@@ -1,0 +1,6 @@
+.s6-flash-pipeline-container{
+    @include section-searchbar__child-dimentions;
+    overflow-y: auto;
+
+    font-size: small;
+}

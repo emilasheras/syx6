@@ -75,6 +75,18 @@
 	&-debug-bg {
 		background-color: $s6-debug-color;
 	}
+
+	&-debug-border {
+		border: 3px solid $s6-debug-color;
+	}
+
+	&-h-100 {
+		height: 100%;
+	}
+
+	&-w-100 {
+		width: 100%;
+	}
 	
 	&-text-accent {
 		color: $accent;
