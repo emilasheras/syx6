@@ -12,9 +12,9 @@ export default function CartWidget(){
 
     return(
         <>
-        <div className="cart-container">
-            <div className="cart-icon">
-                <span className="material-symbols-outlined">{cartIcons.default}</span>
+        <div className="cart-container s6-cart-container">
+            <div className="cart-icon s6-cart-icon-container">
+                <span className="s6-v-align-middle material-symbols-outlined">{cartIcons.default}</span>
                 <span className="badge">{cart.total}</span>
                 <span className="badge">{itemsInCart()}</span>
             </div>

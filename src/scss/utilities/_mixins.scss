@@ -1,3 +1,5 @@
+@use "sass:map";
+
 /* Mixins Setup */
 
 @mixin avatar($size, $circle: false) {
@@ -17,4 +19,42 @@
 	margin: 0;
 	padding: 0 0rem;
 	// background-color: $accent;
+}
+
+@mixin s6-navbar-vertical-tab-size{
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  padding: 0;
+  margin: 0;
+  line-height: 1.2rem;
+  height: 4rem;
+  max-height: 4rem;
+  width: $nav-width;
+	@media screen and (max-width: map.get($grid-breakpoints-bs5, md)) {
+    height: 2.5rem;
+    max-height: 2.5rem;
+    width: $nav-width-mobile;
+  }
+}
+  
+@mixin s6-navbar-vertical-alignment{
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+	// justify-content: flex-start;
+}
+
+// Use this in the ::before
+@mixin s6-frosted-bg{
+  content: "";
+  position: absolute;
+  /* strech over parent element */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* add filter */
+  backdrop-filter: blur(6px) saturate(10%);
+
+  z-index: -1; /* put it behind the navbar */
 }

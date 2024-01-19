@@ -1,3 +1,5 @@
+@use "sass:map";
+
 /* Vertical Navbar Setup */
 .s6-navbar-vertical {
 	/* move to the top z index. this is cause of the layout change for mobile */
@@ -11,10 +13,11 @@
 	position: fixed;
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-end;
+	gap: 1rem;
 
 	/* alignment */
-	align-items: center;
-	justify-content: flex-start;
+	@include s6-navbar-vertical-alignment;
 
 	/* size */
 	height: 100vh;
@@ -23,35 +26,17 @@
 	border-right: 1px solid $light-grey;
 	border-bottom: none;
 
-	& .logo-container {
-		padding: 1rem;
-		width: $logo-size;
-		height: $logo-size;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		// logo img
-		img {
-			object-fit: cover;
-			border-radius: 50%;
+	& .s6-navbar-link{
+		a {
+			display: flex;
+			@include s6-navbar-vertical-tab-size;
+			@include s6-navbar-vertical-alignment;
 		}
-	}
-	& .s6-navbar-unordered-list {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-evenly;
-		height: 100%;
 	}
 
 	& a {
 		font-family: "Inconsolata", monospace;
 		color: $nav-link-color;
-		font-size: 1.6rem;
 		text-decoration: none;
 		&:hover {
 			color: $accent;
@@ -61,7 +46,39 @@
 		}
 	}
 
-	@media screen and (max-width: 768px) {
+	& .logo-container {
+		@include s6-navbar-vertical-tab-size;
+		@include s6-navbar-vertical-alignment;
+
+		width: $logo-width;
+		height: auto;
+		max-height: none;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		// logo img
+		img {
+			object-fit: cover;
+			border-radius: 50%;
+		}
+		a {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	& .s6-navbar-unordered-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		@include s6-navbar-vertical-alignment;
+	}
+
+	@media screen and (max-width: map.get($grid-breakpoints-bs5, md)) {
 		& {
 			grid-area: navbar;
 			/* swap solid color for transparent one. */
@@ -87,17 +104,7 @@
 			border-right: none;
 		}
 		&::before {
-			content: "";
-			position: absolute;
-			/* strech over parent element */
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			/* add filter */
-			backdrop-filter: blur(6px) saturate(10%);
-
-			z-index: -1; /* put it behind the navbar */
+			@include s6-frosted-bg;
 		}
 
 		& .logo-container {
@@ -109,25 +116,29 @@
 		}
 
 		& .s6-navbar-unordered-list {
+			display: none;
 			flex-direction: column;
 			justify-content: space-evenly;
 			align-items: center;
 			height: 100%;
 			width: 100%;
-			display: none;
 			transition: translate 250ms ease-in-out;
 			// translate:  100% 150%;
+		}
+
+		& .s6-cart-container{
+			display: none;
 		}
 
 		// This makes it so that the items when the hamburger is clicked
 		&:has(.s6-invisible-input:checked) {
 			& .s6-navbar-unordered-list {
 				display: flex;
-				translate:  0%;
-				// height: 10px;
+			}
+			& .s6-cart-container{
+				display: flex;
 			}
 		}
-
 	}
 }
 

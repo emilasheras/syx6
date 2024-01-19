@@ -13,3 +13,11 @@
     display: flex;
     flex-direction: column;
 }
+
+// CartWidget.jsx
+.s6-cart-container{
+    display: flex;
+    flex-direction: column;
+    @include s6-navbar-vertical-tab-size;
+    @include s6-navbar-vertical-alignment;
+}

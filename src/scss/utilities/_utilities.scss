@@ -1,6 +1,17 @@
 /* s6 Helper Styles */
 
 .#{$lib-prefix}{
+
+	&-v-align-middle {
+		vertical-align: middle;
+	}
+	&-v-align-top {
+		vertical-align: top;
+	}
+	&-v-align-bottom {
+		vertical-align: bottom;
+	}
+	
 	@each $i in 1 through 10 {
 		&-line-height-#{$i} {
 			line-height: $i;

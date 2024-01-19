@@ -32,10 +32,11 @@ $accent-two: #5643FF;
 
 // Sizes
 $webkit-scrollbar-width: 0.7vw;
-$logo-size: 10rem;
+$logo-width: 140px;
 
 // Nav
 $nav-width: 14rem;
+$nav-width-mobile: 100vw;
 $nav-link-color: #65e4e8;
 $nav-bg-color: $dark-grey;
 $nav-bg-color-transparent: #0c0c0c67; // should be some transparent value
