@@ -3,8 +3,6 @@ import React from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 // Pages
-import ForceAuthForm from "../auth/form/ForceAuthForm";
-import NotFoundPageMain from "../../pages/NotFoundPage";
 const IdxPageMain = React.lazy(() => import("../../pages/IdxPage"));
 const HmePageMain = React.lazy(() => import("../../pages/HmePage"));
 const GlrPageMain = React.lazy(() => import("../../pages/GlrPage"));
@@ -19,6 +17,7 @@ const AssetPageMain = React.lazy(() => import("../../pages/glr/AssetPage"));
 import urlData from "../../data/s6-url-data";
 import syxlog from "../../utils/syxlog";
 import RoutesFromJson from "./RoutesFromJson";
+import DefaultRoutes from "./DefaultRoutes";
 
 const AppRoutes = () => {
 	let location = useLocation();
@@ -43,18 +42,8 @@ const AppRoutes = () => {
 
 	return (
 		<Routes>
-			{/* SignIn page */}
-			<Route path="/auth/login" element={<ForceAuthForm />} />
-
-			{/* Redirect `/` => `IdxPage` */}
-			<Route path="/" element={<Navigate to={"/pages/idx"} />} />
-
-			{/* All pages in Url JSON file */}
+			{DefaultRoutes()}
 			{RoutesFromJson({ urlData, componentMapping })}
-
-			{/* Redirect `*` => `NotFoundPage` */}
-			<Route path="/pages/not-found" element={<NotFoundPageMain />} />
-			<Route path="*" element={<Navigate to={"/pages/not-found"} />} />
 		</Routes>
 	);
 };

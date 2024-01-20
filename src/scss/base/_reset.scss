@@ -13,8 +13,6 @@
 	}
 } 
 
-
-
 /* reset learned from https://gist.github.com/Asjas/4b0736108d56197fce0ec9068145b421 */
 *,
 *::before,
@@ -43,3 +41,17 @@ h1, h2, h3, h4, h5, h6, .s6-heading {
 	padding: 0;
 	text-transform: capitalize;  
 }
+
+/* Reset styles for <a> and <button> tags */
+a, button {
+	display: inline-block;
+	text-decoration: none;
+	// background-color: transparent;
+	border: none;
+	// color: inherit;
+	font: inherit;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 3px;
+}
+

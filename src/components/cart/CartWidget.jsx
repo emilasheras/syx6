@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
+import { Link } from "react-router-dom";
 
 export default function CartWidget(){    
     const { cart, itemsInCart } = useContext(CartContext);
@@ -12,7 +13,7 @@ export default function CartWidget(){
 
     return(
         <>
-        <div className="cart-container s6-cart-container">
+        <Link to="/checkout/cart" className="cart-container s6-cart-container">
             <div className="cart-icon s6-cart-icon-container">
                 <span className="s6-v-align-middle material-symbols-outlined">{cartIcons.default}</span>
                 <span className="badge">{cart.total}</span>
@@ -20,7 +21,7 @@ export default function CartWidget(){
             </div>
             <div className="cart-counter">
             </div>
-        </div>
+        </Link>
         </>
     )
 }

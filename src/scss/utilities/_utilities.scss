@@ -1,6 +1,13 @@
 /* s6 Helper Styles */
 
 .#{$lib-prefix}{
+	&-wrapper-button-group{
+		width: 100%;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 
 	&-v-align-middle {
 		vertical-align: middle;

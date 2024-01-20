@@ -5,6 +5,9 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import syxutils from "../../utils/syxutils";
 import EmptyCart from "./EmptyCart";
+import { Link } from "react-router-dom";
+import ButtonGroup from "../wrapper-components/ButtonGroup";
+import ClearCartButton from "./ClearCartButton";
 
 const CartSummary = () => {
 	const { cart } = useContext(CartContext);
@@ -31,6 +34,10 @@ const SummarizedCartDetails = () => {
 			{/* <p className="s6-p-bold">Shipping: {cart.shipping}</p> */}
 			{/* <p className="s6-p-bold">Estimated Delivery Date: {cart.deliveryDate}</p> */}
 			{/* <p className="s6-p-bold">Promo Code: {cart.promoCode}</p> */}
+			<ButtonGroup>
+				<Link to="/checkout/cart" className="s6-btn s6-btn-primary">checkout</Link>
+				<ClearCartButton/>
+			</ButtonGroup>
 			{/* Add more details here */}
 		</>
 	);

@@ -5,11 +5,12 @@ import { AssetContext } from "../../contexts/AssetPageContext";
 import SyxParagraph from "../paragraph/SyxParagraph";
 import Rating from "./Rating";
 import Price from "./Price";
-import { CartContext } from "../../contexts/CartContext";
+import AddToCartButton from "../cart/AddToCartButton";
+import RemoveFromCartButton from "../cart/RemoveFromCartButton";
+import ButtonGroup from "../wrapper-components/ButtonGroup";
 
 const Details = () => {
 	const { asset } = useContext(AssetContext);
-	const { addToCart, removeFromCart } = useContext(CartContext);
 
 	return (
 		<div className="s6-post-details">
@@ -27,21 +28,14 @@ const Details = () => {
 				})}
 			</div>
 
-			<div className="s6-post-description">
-				<SyxParagraph text={asset.description} />
-			</div>
-
+			<div className="s6-post-description"><SyxParagraph text={asset.description} /></div>
 			<Rating rating={asset.rating} />
 			<Price price={asset.price} />
-
-			<div className="s6-cart-options-container s6-gap-1 s6-m-top-2">
-				<button className="s6-btn s6-btn-primary" onClick={() => addToCart(asset)}>
-					add
-				</button>
-				<button className="s6-btn s6-btn-danger" onClick={() => removeFromCart(asset)}>
-					remove all
-				</button>
-			</div>
+			
+			<ButtonGroup>
+				<AddToCartButton asset={asset} />
+				<RemoveFromCartButton asset={asset} />
+			</ButtonGroup>
 		</div>
 	);
 };
