@@ -1,9 +1,10 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app } from "../firebase/config"; // Adjust the path as necessary
 import PropTypes from "prop-types";
 import syxutils from "../utils/syxutils";
 import getLoadingJSX from "../components/loading-scaffold/getLoadingJSX";
+import { CartContext } from "./CartContext";
 
 // Create the context
 export const UserContext = createContext();
@@ -13,12 +14,17 @@ export const UserProvider = ({ children }) => {
 	const [currentUser, setCurrentUser] = useState(false);
 	const [loading, setLoading] = useState(true);
 	const auth = getAuth(app); // Pass the Firebase app instance
+	const { clearCart } = useContext(CartContext);
 
 	useEffect(() => {
 		// This listener handles the auth state change
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			// Set the current user to the user object from the Firebase auth response
 			setCurrentUser(user);
+			// Set the cart to empty if the user is a guest
+			// if (isGuest) //! todo: change this to a more robust check for the actual user value. the cart can be stored in the db too 
+			clearCart();
+
 			// Set loading to false since we have now fetched the user object
 			setLoading(false);
 		});

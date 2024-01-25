@@ -6,7 +6,7 @@ import syxlog from './utils/syxlog.js';
 syxlog.debug(`MODE`,import.meta.env.MODE);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  //<React.StrictMode>
     <App />
-  </React.StrictMode>,
+  //</React.StrictMode>,
 )

@@ -1,0 +1,11 @@
+.s6-asset-thumbnail{
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    overflow: hidden;
+    transition: filter 0.2s;
+    border-radius: 50%;
+    &:hover {
+        filter: brightness(0.8);
+    }
+}

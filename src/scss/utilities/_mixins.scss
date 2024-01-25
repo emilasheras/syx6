@@ -58,3 +58,15 @@
 
   z-index: -1; /* put it behind the navbar */
 }
+
+@mixin s6-cart-checkout-child{
+  border: inherit;
+  border-radius: inherit;
+  padding: inherit;
+  margin: inherit;
+
+  display: flex;
+  flex-direction: column;        
+  gap: .5rem;
+  align-items: center;
+}

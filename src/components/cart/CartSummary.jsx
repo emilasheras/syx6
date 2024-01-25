@@ -4,18 +4,24 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import syxutils from "../../utils/syxutils";
-import EmptyCart from "./EmptyCart";
 import { Link } from "react-router-dom";
 import ButtonGroup from "../wrapper-components/ButtonGroup";
 import ClearCartButton from "./ClearCartButton";
+import SyxParagraph from "../paragraph/SyxParagraph";
 
 const CartSummary = () => {
 	const { cart } = useContext(CartContext);
-
+	const title = "Cart Summary";
+	const emptyCartDescription = "Your cart is empty";
+	
 	return (
 		<div className="s6-cart-summary">
-			<h3 className="s6-h3-bold">Cart Summary</h3>
-			{syxutils.empty(cart.items) ? <EmptyCart /> : <SummarizedCartDetails cart={cart} />}
+			<h3 className="s6-h3-bold">{title}</h3>
+			{syxutils.empty(cart.items) ? (
+				<SyxParagraph text={emptyCartDescription} />
+			) : (
+				<SummarizedCartDetails cart={cart} />
+			)}
 		</div>
 	);
 };
@@ -26,8 +32,8 @@ const SummarizedCartDetails = () => {
 	// todo: finish implementation
 	return (
 		<>
-			<p className="s6-p-bold">Total items: {itemsInCart()}</p>
-			<p className="s6-p-bold">Total: {totalCart()}</p>
+			<SyxParagraph text={`Items: ${itemsInCart()}`}></SyxParagraph>
+			<SyxParagraph text={`Total: ${totalCart()}`}></SyxParagraph>
 			{/* <p className="s6-p-bold">Subtotal: {cart.subtotal}</p> */}
 			{/* <p className="s6-p-bold">Tax: {cart.tax}</p> */}
 			{/* <p className="s6-p-bold">Discount: {cart.discount}</p> */}

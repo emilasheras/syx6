@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import PropTypes from "prop-types";
 import { FlashPipelineContext } from "./FlashPipelineContext";
+import syxutils from "../utils/syxutils";
 
 export const CartContext = createContext();
 
@@ -57,6 +58,10 @@ export const CartProvider = ({ children }) => {
 		return cart.total;
 	};
 
+	const isCartEmpty = () => {
+		return syxutils.empty(cart.items);
+	};
+
 	//* Value passed down to the consuming components via the Provider component
 	const cartContextValue = {
 		cart,
@@ -66,6 +71,7 @@ export const CartProvider = ({ children }) => {
 		clearCart,
 		itemsInCart,
 		totalCart,
+		isCartEmpty,
 		//... other variables here
 	};
 
